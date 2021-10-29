@@ -30,7 +30,7 @@
             <li><a href="#" data-theme-switcher="dark">Dark</a></li>
         </ul>
     </div>
-    
+   
     <h1 class="sr-only">$title$</h1>
     $for(include-before)$ $include-before$ $endfor$
     <main class="container">
@@ -41,19 +41,18 @@
                         <a href="index.html" class="back">
                             Back to Home
                         </a>
-                        <ul>
-                        ${for(categories)}
-                            ${for(it.info)}
-                            <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>
-                            ${endfor}
-                        ${endfor}
+                        <ul>${for(categories)}${for(it.info)}                      
+                            <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>${endfor}${endfor}                         
                         </ul>
+                        <a href="#top" class="back">
+                            Back to Top
+                        </a>
                     </nav>
                 </aside>
             </div>
-            <div class="content">
+            <div class="content" id="#top">
                 <h2>$chapter_title$</h2>
-                $body$ $if(definitions)$ ${ definitions.html() } $endif$
+$body$ $if(definitions)$ ${ definitions.html() } $endif$
             </div>
         </div>
     </main>

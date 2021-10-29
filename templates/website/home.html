@@ -105,12 +105,8 @@
                 <aside>
                     <h2>Table of Contents</h3>
                     <nav>
-                    <ul>
-                        ${for(categories)}
-                        ${for(it.info)}
-                        <li><a href="${it.htmlfile}">${it.html_title}</a></li>
-                        ${endfor}
-                        ${endfor}
+                    <ul>${for(categories)}${for(it.info)}
+                        <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>${endfor}${endfor}
                     </ul>
                     </nav>
                 </aside>
