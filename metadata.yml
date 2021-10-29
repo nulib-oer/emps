@@ -1,0 +1,59 @@
+# bibliographic metadata
+
+title: Empirical Methods in Political Science
+subtitle: An Introduction
+
+author:
+  - name: Jean Clipperton
+    affiliation: Northwestern University
+
+contributor:
+  - Max Weylandt
+  - Pilar Manzi
+  - Salih Noor
+  - Zhihang Ruan
+  - Irene Kwon
+  - Sam Gubitz
+  - Justin Zimmerman
+  - Erin Ochoa
+  - John Lee
+
+publication-year: 2021
+#doi: 10.1000/xyz123
+#isbn-p: something
+#isbn-e: something
+#url: something
+
+#keywords:
+#  - keyword
+#  - keyword
+#  - keyword
+#
+#subjects: 
+#  - Subject
+#  - Subject
+#  - Subject
+
+description: |
+  This is an introductory college textbook on using empirical methods in political science research.
+
+copyright:
+  # holder: person or entity; default is the authors
+  statement: In Copyright 
+  statement-uri: http://rightsstatements.org/vocab/InC/1.0/
+  license: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) 
+  license-uri: https://creativecommons.org/licenses/by-nc/4.0/
+  #attribution: |
+  #  [Lastname, Firstname. Title of Book. Place of publication: Publisher, Year of publication.]
+  #exceptions:    
+  #  - Chapter written under a different license
+  #  - Image used with permission of the creator
+
+publisher:
+  name: Northwestern University Libraries
+  location: Evanston, Illinois
+  website: https://www.library.northwestern.edu
+  #disclaimer: |
+  #  Use this space to add any legal disclaimers about the book.
+
+lang: en-us 
