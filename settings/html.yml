@@ -21,8 +21,8 @@ toc-depth: 3
 number-sections: false
 number-offset: [0,0,0,0,0,0]
 
-#filters:
-#  - lib/lua-filters/chapter-titles.lua
+filters:
+  - lib/lua-filters/questions.lua
 
 # citations
 citeproc: true
