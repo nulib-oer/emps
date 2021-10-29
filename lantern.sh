@@ -121,10 +121,9 @@ extract_metadata() {
     echo "Extracting metadata..."
     for FILE in chapters/*.md; do
         # sets the h1 markdown heading as the chapter title
-        chapter_title="$(grep '^# ' "$FILE" | sed 's/#//')"
+        chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
 
         pandoc "$FILE" \
-            --metadata-file metadata.yml \
             --metadata basename="$(basename "$FILE" .md)" \
             --template templates/website/category.template.txt \
             -t html -o "_temp/$(basename "$FILE" .md).category.txt"
@@ -179,6 +178,7 @@ html() {
     
     echo "Building chapter pages..."
     for FILE in chapters/*.md;do
+        echo "⚙️ Processing $FILE..."
         CATEGORY_FAUX_URLENCODED="$(cat "_temp/$(basename "$FILE" .md).category.txt" | cut -d" " -f2- | awk -f "templates/website/faux_urlencode.awk")"
         # when running under GitHub Actions, all file modification dates are set to
         # the date of the checkout (i.e., the date on which #the workflow was
@@ -190,17 +190,15 @@ html() {
         else
             UPDATED_AT="$(date -r "$FILE" "+%Y-%m-%d")"
         fi
-        # set basename to enable linking to github in the footer, and set
-        # category_faux_urlencoded in order to link to that in the header
         
         pandoc "$FILE" \
-            --filter pandoc-crossref \
             --metadata basename="$(basename "$FILE" .md)" \
             --metadata category_faux_urlencoded="$CATEGORY_FAUX_URLENCODED" \
             --metadata updatedtime="$UPDATED_AT" \
             --metadata-file _temp/index.json \
             --defaults settings/html.yml \
             -o "$output_directory/$(basename "$FILE" .md).html"
+            
     done
    
     echo "Building the home page..."
