@@ -59,6 +59,12 @@ There is a bit of a divide between qualitative/small-n and quantitative/large-n 
 **Check-in question 1:** What is the difference between inductive and deductive research?
 :::
 
+::: {.question summary="What is the difference between inductive and deductive research?"}
+
+Inductive research generally begins with the gathering of evidence and then generates theory after analyzing the evidence. Deductive research follows the opposite order: it begins with a theory and hypothesis, then on to collecting evidence and testing the hypothesis in light of the data collected.
+
+:::
+
 Along each step of the process, there are many hurdles to good research. Before we can even begin our research, be it descriptive or causal, we have to be clear about what we are actually researching. Sure, it sounds interesting to research partisanship, or polarization, or corruption, or gentrification. But what do those terms actually mean? And how exactly can you measure it? As we'll discuss in more detail in [ch04](./data.html), there is never one right way to define or measure concepts, and these differences alone can make huge differences in study outcomes.
 
 Say we agree on how to define gentrification, and how we want to measure it. Even with a clear measurement that is easily available, **measurement errors** will creep in either due to human error or randomness. When doing research with a lot of cases (large-N research) it's almost never possible to collect data on all the instances of the thing we are interested in, so we need to find a representative sample. As you will learn in Chapters [ch04](./data.html) and [ch06](./surveys.html), this process results in a fair amount of uncertainty when done perfectly, and much more when done imperfectly. Similarly, researchers working with a smaller number of cases still have to restrict their choices somewhat as they are researching cases in great depth ([ch09](./small-n.html) has more on this).

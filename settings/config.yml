@@ -1,5 +1,7 @@
 # publication settings
 
+lang: en-us 
+
 toc-title: "Contents" 
 reference-section-title: "References" 
 link-citations: true

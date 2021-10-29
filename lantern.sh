@@ -89,6 +89,9 @@ epub() {
 oai() {
     touch _temp/empty.txt
     pandoc _temp/empty.txt \
+        --to plain \
+        --metadata-file metadata.yml \
+        --template templates/oai.xml \
         --defaults settings/oai.yml \
         -o $output_directory/$output_filename.xml
     echo "🌐 The OAI-PMH record is now available in the $output_directory folder"
@@ -204,9 +207,11 @@ html() {
     echo "Building the home page..."
     pandoc _temp/empty.txt \
         --metadata-file _temp/index.json \
-        --defaults settings/home.yml \
+        --metadata-file metadata.yml \
+        --metadata-file settings/config.yml \
+        --template templates/website/home.html \
         --metadata updatedtime="$(date "+%Y-%m-%d")" \
-        -o $output_directory/index.html
+        -s -o $output_directory/index.html
 
     echo "Assembling search index..."
     echo "[" > _temp/search.json
