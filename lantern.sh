@@ -52,7 +52,7 @@ preprocess() {
 pdf() {
     $pandoc_command text/*.md -o _temp/chapters.md
     $pandoc_command _temp/chapters.md \
-        --filter $pandoc_command-crossref \
+        --filter pandoc-crossref \
         --defaults settings/latex.yml \
         --no-highlight \
         -o $output_directory/$output_filename.pdf
@@ -119,7 +119,7 @@ copy_assets() {
         echo "Copying images..."
         cp -r images $output_directory; 
     else
-        echo "No images. Skipping..."
+        echo "No images directory. Skipping..."
     fi 
     cp -r lib/styles/ $output_directory;
     cp -r lib/js/ $output_directory;
@@ -132,11 +132,13 @@ extract_metadata() {
         chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
         basename="$(basename "$FILE" .md)"
 
+        # assigns categories
         $pandoc_command "$FILE" \
             --metadata basename=$basename \
             --template templates/website/category.template.txt \
-            -t html -o "_temp/$basename.category.txt"
+            --to html -o "_temp/$basename.category.txt"
 
+        # converts metadata to json
         $pandoc_command "$FILE" \
             --metadata chapter_title="$chapter_title" \
             --metadata htmlfile="$basename.html" \
@@ -146,8 +148,8 @@ extract_metadata() {
 }
 
 build_index() {
-    # this next block is straight from nyum...
-    echo "Grouping metadata by chapter order..."  # (yep, this #is a right mess)
+    # consolidates the metadata into a single json file
+    echo "Grouping metadata by category..."  # (yep, this #is a right mess)
     echo "{\"categories\": [" > _temp/index.json
     SEPARATOR_OUTER=""  # no comma before first list element (categories)
     SEPARATOR_INNER=""  # ditto (recipes per category)
@@ -190,10 +192,10 @@ html() {
         echo "⚙️ Processing $FILE..."
         CATEGORY_FAUX_URLENCODED="$(cat "_temp/$(basename "$FILE" .md).category.txt" | cut -d" " -f2- | awk -f "templates/website/faux_urlencode.awk")"
         # when running under GitHub Actions, all file modification dates are set to
-        # the date of the checkout (i.e., the date on which #the workflow was
-        # executed), so in that case, use the most recent #commit date of each recipe
-        # as its update date – you'll probably also want to #set the TZ environment
-        # variable to your local timezone in the workflow #file (#21)
+        # the date of the checkout (i.e., the date on which the workflow was
+        # executed), so in that case, use the most recent commit date of each file
+        # as its update date – you'll probably also want to set the TZ environment
+        # variable to your local timezone in the workflow file (#21)
         if [[ "$GITHUB_ACTIONS" = true ]]; then
             UPDATED_AT="$(git log -1 --date=short-local --pretty='format:%cd' "$FILE")"
         else
@@ -243,6 +245,7 @@ reset() {
 }
 
 server() {
+    # runs a local server for development purposes
     # requires Python 3.x installed on the machine
     html;
     python3 -m http.server --directory $output_directory;
