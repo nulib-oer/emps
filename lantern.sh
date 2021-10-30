@@ -6,6 +6,10 @@ output_filename='Clipperton_EMPS'
 output_directory='public'
 siteurl=''
 
+# utilities
+
+pandoc_command='pandoc --quiet' # change to 'pandoc --verbose' to debug
+
 # setup
 
 mkdir -p _temp/
@@ -21,7 +25,7 @@ preprocess() {
     if [ $docx_files != 0 ] ; then 
     for f in source/preprocess/*.docx
         do 
-            pandoc "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
+            $pandoc_command "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
             mv "${f%.docx}.md" source/chapters/
         done
     fi
@@ -29,7 +33,7 @@ preprocess() {
     if [ $odt_files != 0 ] ; then 
     for f in source/preprocess/*.odt
         do 
-            pandoc "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
+            $pandoc_command "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
             mv "${f%.odt}.md" source/chapters/
         done
     fi
@@ -37,7 +41,7 @@ preprocess() {
     if [ $latex_files != 0 ] ; then 
     for f in source/preprocess/*.tex
         do 
-            pandoc "$f" -t latex --wrap=none -s -o "${f%.*}.md"
+            $pandoc_command "$f" -t latex --wrap=none -s -o "${f%.*}.md"
             mv "${f%.odt}.md" source/chapters/
         done
     fi
@@ -46,9 +50,9 @@ preprocess() {
 # lantern output formats
 
 pdf() {
-    pandoc text/*.md -o _temp/chapters.md
-    pandoc _temp/chapters.md \
-        --filter pandoc-crossref \
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
+        --filter $pandoc_command-crossref \
         --defaults settings/latex.yml \
         --no-highlight \
         -o $output_directory/$output_filename.pdf
@@ -57,9 +61,9 @@ pdf() {
 }
 
 latex() {
-    pandoc text/*.md -o _temp/chapters.md
-    pandoc _temp/chapters.md \
-        --filter pandoc-crossref \
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
+        --filter $pandoc_command-crossref \
         --defaults settings/latex.yml \
         --no-highlight \
         -o $output_directory/$output_filename.tex
@@ -68,8 +72,8 @@ latex() {
 }
 
 docx() {
-    pandoc text/*.md -o _temp/chapters.md
-    pandoc _temp/chapters.md \
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
         --defaults settings/docx.yml \
         -o $output_directory/$output_filename.docx
     rm _temp/chapters.md
@@ -77,8 +81,8 @@ docx() {
 }
 
 epub() {
-    pandoc text/*.md -o _temp/chapters.md
-    pandoc _temp/chapters.md \
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
         --defaults settings/epub.yml \
         --resource-path=.:images \
         --mathml \
@@ -89,7 +93,7 @@ epub() {
 
 oai() {
     touch _temp/empty.txt
-    pandoc _temp/empty.txt \
+    $pandoc_command _temp/empty.txt \
         --to plain \
         --metadata-file metadata.yml \
         --template templates/oai.xml \
@@ -99,7 +103,7 @@ oai() {
 }
 
 markdown() {
-    pandoc text/*.md \
+    $pandoc_command text/*.md \
         --metadata-file metadata.yml \
         --wrap=none \
         -s -o $output_directory/$output_filename.md
@@ -128,12 +132,12 @@ extract_metadata() {
         chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
         basename="$(basename "$FILE" .md)"
 
-        pandoc "$FILE" \
+        $pandoc_command "$FILE" \
             --metadata basename=$basename \
             --template templates/website/category.template.txt \
             -t html -o "_temp/$basename.category.txt"
 
-        pandoc "$FILE" \
+        $pandoc_command "$FILE" \
             --metadata chapter_title="$chapter_title" \
             --metadata htmlfile="$basename.html" \
             --template templates/website/metadata.template.json \
@@ -197,7 +201,7 @@ html() {
         fi
         
         basename="$(basename "$FILE" .md)"
-        pandoc "$FILE" \
+        $pandoc_command "$FILE" \
             --metadata siteurl=$siteurl \
             --metadata category_faux_urlencoded="$CATEGORY_FAUX_URLENCODED" \
             --metadata updatedtime="$UPDATED_AT" \
@@ -208,7 +212,7 @@ html() {
     done
    
     echo "Building the home page..."
-    pandoc _temp/empty.txt \
+    $pandoc_command _temp/empty.txt \
         --metadata-file _temp/index.json \
         --metadata-file metadata.yml \
         --metadata-file settings/config.yml \
