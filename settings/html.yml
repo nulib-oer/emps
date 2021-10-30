@@ -23,7 +23,7 @@ number-offset: [0,0,0,0,0,0]
 
 filters:
   - lib/lua-filters/questions.lua
-  - lib/lua-filters/baseurl.lua
+  - lib/lua-filters/siteurl.lua
 
 # citations
 citeproc: true

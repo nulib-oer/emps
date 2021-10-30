@@ -4,6 +4,7 @@
 
 output_filename='Clipperton_EMPS'
 output_directory='public'
+siteurl=''
 
 # setup
 
@@ -45,7 +46,7 @@ preprocess() {
 # lantern output formats
 
 pdf() {
-    pandoc chapters/*.md -o _temp/chapters.md
+    pandoc text/*.md -o _temp/chapters.md
     pandoc _temp/chapters.md \
         --filter pandoc-crossref \
         --defaults settings/latex.yml \
@@ -56,7 +57,7 @@ pdf() {
 }
 
 latex() {
-    pandoc chapters/*.md -o _temp/chapters.md
+    pandoc text/*.md -o _temp/chapters.md
     pandoc _temp/chapters.md \
         --filter pandoc-crossref \
         --defaults settings/latex.yml \
@@ -67,7 +68,7 @@ latex() {
 }
 
 docx() {
-    pandoc chapters/*.md -o _temp/chapters.md
+    pandoc text/*.md -o _temp/chapters.md
     pandoc _temp/chapters.md \
         --defaults settings/docx.yml \
         -o $output_directory/$output_filename.docx
@@ -76,7 +77,7 @@ docx() {
 }
 
 epub() {
-    pandoc chapters/*.md -o _temp/chapters.md
+    pandoc text/*.md -o _temp/chapters.md
     pandoc _temp/chapters.md \
         --defaults settings/epub.yml \
         --resource-path=.:images \
@@ -98,7 +99,7 @@ oai() {
 }
 
 markdown() {
-    pandoc chapters/*.md \
+    pandoc text/*.md \
         --metadata-file metadata.yml \
         --wrap=none \
         -s -o $output_directory/$output_filename.md
@@ -122,20 +123,21 @@ copy_assets() {
 
 extract_metadata() {
     echo "Extracting metadata..."
-    for FILE in chapters/*.md; do
+    for FILE in text/*.md; do
         # sets the h1 markdown heading as the chapter title
         chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
+        basename="$(basename "$FILE" .md)"
 
         pandoc "$FILE" \
-            --metadata basename="$(basename "$FILE" .md)" \
+            --metadata basename=$basename \
             --template templates/website/category.template.txt \
-            -t html -o "_temp/$(basename "$FILE" .md).category.txt"
+            -t html -o "_temp/$basename.category.txt"
 
         pandoc "$FILE" \
             --metadata chapter_title="$chapter_title" \
-            --metadata htmlfile="$(basename "$FILE" .md).html" \
+            --metadata htmlfile="$basename.html" \
             --template templates/website/metadata.template.json \
-            --to html -o "_temp/$(basename "$FILE" .md).metadata.json"
+            --to html -o "_temp/$basename.metadata.json"
     done;                  
 }
 
@@ -180,7 +182,7 @@ html() {
     build_index
     
     echo "Building chapter pages..."
-    for FILE in chapters/*.md;do
+    for FILE in text/*.md;do
         echo "⚙️ Processing $FILE..."
         CATEGORY_FAUX_URLENCODED="$(cat "_temp/$(basename "$FILE" .md).category.txt" | cut -d" " -f2- | awk -f "templates/website/faux_urlencode.awk")"
         # when running under GitHub Actions, all file modification dates are set to
@@ -194,13 +196,14 @@ html() {
             UPDATED_AT="$(date -r "$FILE" "+%Y-%m-%d")"
         fi
         
+        basename="$(basename "$FILE" .md)"
         pandoc "$FILE" \
-            --metadata basename="$(basename "$FILE" .md)" \
+            --metadata siteurl=$siteurl \
             --metadata category_faux_urlencoded="$CATEGORY_FAUX_URLENCODED" \
             --metadata updatedtime="$UPDATED_AT" \
-            --metadata-file _temp/index.json \
+            --metadata htmlfile="$basename.html" \
             --defaults settings/html.yml \
-            -o "$output_directory/$(basename "$FILE" .md).html"
+            -o "$output_directory/$basename.html"
             
     done
    
