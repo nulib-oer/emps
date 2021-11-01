@@ -84,3 +84,19 @@ div.csl-entry {
     text-indent:-2em;
     margin-bottom: 1em;
 }
+
+/* Questions */
+
+details {
+    background-color: var(--contrast);
+    padding: 1em;
+}
+
+details summary {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+details p {
+    color: var(--secondary);
+}
