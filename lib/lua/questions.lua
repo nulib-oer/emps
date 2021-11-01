@@ -14,7 +14,7 @@ function Div(el)
     html =
       '<details>' ..
       '<summary>' ..
-      el.attributes["summary"] ..
+      el.attributes["text"] ..
       '</summary>' 
       
     table.insert(res, pandoc.RawBlock('html', html))
@@ -22,7 +22,6 @@ function Div(el)
     for _, block in ipairs(el.content) do
       table.insert(res, block)
     end
-    table.insert(res, pandoc.RawBlock('html', '</div>'))
     table.insert(res, pandoc.RawBlock('html', '</details>'))
     
   return res
