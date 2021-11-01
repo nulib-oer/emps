@@ -22,8 +22,8 @@ number-sections: false
 number-offset: [0,0,0,0,0,0]
 
 filters:
-  - lib/lua-filters/questions.lua
-  - lib/lua-filters/siteurl.lua
+  - lib/lua/questions.lua
+  - lib/lua/siteurl.lua
 
 # citations
 citeproc: true

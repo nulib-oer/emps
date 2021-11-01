@@ -121,7 +121,7 @@ copy_assets() {
     else
         echo "No images directory. Skipping..."
     fi 
-    cp -r lib/styles/ $output_directory;
+    cp -r lib/css/ $output_directory;
     cp -r lib/js/ $output_directory;
 }
 

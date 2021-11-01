@@ -51,7 +51,7 @@ dpi: 72
 
 # lua filters for adding new environments
 filters:
-  - lib/lua-filters/latex-divs.lua
+  - lib/lua/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
