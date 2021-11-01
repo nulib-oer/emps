@@ -1,5 +1,27 @@
 ---
 category: 2
+key-terms:
+    -   bias
+    -   causal inference
+    -   counterfactual
+    -   data generating process
+    -   deductive research
+    -   dependent variable
+    -   descriptive inference
+    -   hypotheses
+    -   independent variable
+    -   inductive research
+    -   inference
+    -   measurement error
+    -   observational study
+    -   operationalization
+    -   random measurement error
+    -   reciprocal
+    -   reverse-causation
+    -   sampling
+    -   spuriousness
+    -   theory
+    -   variable
 ---
 
 # Causal Inference and the Scientific Method 
@@ -55,11 +77,7 @@ There are a number of ways the research process can be compromised. On one end t
 
 There is a bit of a divide between qualitative/small-n and quantitative/large-n scholars on this issue. The former often caution against starting with the data, while the latter consider it essential. A qualitative scholar might argue that you cannot come up with good hypotheses without knowing a good deal about the cases you are interested in -- without looking at the data. In reality, quantitative scholars also perform exploratory analyses. There is no way to guarantee that research was done ethically and conscientiously, but the academic community is coming up with new methods, such as [pre-registration](https://cos.io/prereg/) to increase confidence in how they proceed.
 
-::: box :::
-**Check-in question 1:** What is the difference between inductive and deductive research?
-:::
-
-::: {.question summary="What is the difference between inductive and deductive research?"}
+::: { .question text="What is the difference between inductive and deductive research?"}
 
 Inductive research generally begins with the gathering of evidence and then generates theory after analyzing the evidence. Deductive research follows the opposite order: it begins with a theory and hypothesis, then on to collecting evidence and testing the hypothesis in light of the data collected.
 
@@ -79,8 +97,10 @@ I want to know if taking an aspirin will ease my headache. I can take the aspiri
 
 Since we will never have access to testing a causal claim through enacting the counterfactual, thinking about cause-effect relationships -- both coming up with theories and testing them -- is a very complex matter. There are several things we must keep in mind in the process of thinking about causality.
 
-::: box :::
-**Check-in question 2:** In your own words, explain the importance of \"all else equal\".
+::: { .question text="In your own words, explain the importance of \"all else equal\"."}
+
+"All else equal" refers to the attempt of recreating the counterfactual. The counterfactual refers to that situation where everything remains exactly the same except for the presence/absence of the treatment (the explanatory variable).
+
 :::
 
 Let's take the example of media consumption and partisanship. Say you propose the theory that watching Fox News causes viewers to vote for Republican candidates at higher rates. (For scholarship on this issue, see for example @schroederFoxNewsPolitical2015 and @hopkinsConsequencesBroaderMedia2014). Four questions can help us structure our thinking about this potential causal relationship, both in the abstract and when working with data to test its existence.
@@ -115,8 +135,10 @@ In any case, having an idea of why two variables are related makes us more confi
 
 If we address these questions, then we might have a chance at identifying a cause-effect relationship. Some methods are better than others at addressing these issues. Although later chapters will go into more detail on some of these methodologies, we will briefly introduce them here, focusing particularly on their strengths and weaknesses towards achieving causal inference. As mentioned above, causal inference is not restricted to quantitative methods. Causal relationship can also be revealed through qualitative methods, such as Process Tracing and Counterfactuals. These tools rely on in-depth analysis of particular cases by, for instance, examining historical documents and conducting interviews, and you'll learn more about them in [ch09](./small-n.html).
 
-::: box :::
-**Check-in question 3:** \"Development causes democracy\": explain how reverse causality could be operating here.
+::: { .question text="\"Development causes democracy\": explain how reverse causality could be operating here." }
+
+Just as development could cause democracy, it is also plausible that democracy causes development. For instance, foreign countries and international organizations could be more willing to provide aid to a democracy than to a non-democracy. Introducing more freedoms and allowing people to trade and engage in commerce freely could enhance development as well.
+
 :::
 
 Among quantitative methods, there are two types of methods that try to achieve causal inference: experimental studies and observational studies. Experimental studies are the most potent tool for causal inference. Why? Because of randomization. The essential characteristic that makes experiments so powerful is the fact that we can randomly assign the treatment (our independent variable) to our units. Through this seemingly simple action, we are able to overcome many of the problems mentioned above. Recall that the fundamental problem of causal inference is that we can never test the counterfactual; there is no way of holding everything equal except the manipulation of our independent variable. However, through randomization we can make - on average- all other things equal across treatment and control group. By randomly assigning the treatment to units, we can say that the only thing that differs between the treatment and the control is the presence/absence of the treatment. This means that these two groups are even similar across variables we cannot observe, and thus, we are less likely to face a confounding variable problem.
@@ -129,8 +151,10 @@ Historically, many scholars have made causal claims using simple regressions. Th
 
 Finally, it is worth mentioning again that causal inference is not limited to quantitative work. In [ch09](./small-n.html), you will learn about process tracing and other approaches that work better for qualitative data and situations where you have a small number of cases. Some scholars also believe in the use of both qualitative and quantitative methods within one study, complementing large-n statistical work with in-depth case work to strengthen their argument. The interplay between qualitative and quantitative work also happens at a broader level. Nothing is decided on one study alone. The most convincing findings in political science are those that have been confirmed by a variety of scholars using a range of methods.
 
-::: box ::: 
-**Check-in question 4:** Explain why correlation does not imply causation.
+::: { .question text="Explain why correlation does not imply causation."} 
+
+When two variables are correlated it means that there is some association between them: maybe they both increase/decrease at the same time, or they move in opposite directions at the same time. But this does not mean that the movement of one variable is causing the movement of the other. For example, aspirin use is correlated with headaches (aspirin use increases when headaches appear) but this does not mean that aspirins cause headaches.
+
 :::
 
 ## Conclusion
@@ -152,60 +176,6 @@ Imagine you have a research hypothesis: As people become more aware of the unequ
 3.  If you decide to carry out an observational study, what variables should you control for? What are possible confounding variables?
 
 4.  What would the counterfactual in this case look like?
-
-## Key Terms
-
--   bias
-
--   causal inference
-
--   counterfactual
-
--   data generating process
-
--   deductive research
-
--   dependent variable
-
--   descriptive inference
-
--   hypotheses
-
--   independent variable
-
--   inductive research
-
--   inference
-
--   measurement error
-
--   observational study
-
--   operationalization
-
--   random measurement error
-
--   reciprocal
-
--   reverse-causation
-
--   sampling
-
--   spuriousness
-
--   theory
-
--   variable
-
-## Answers to Check-in Questions
-
-1.  Inductive research generally begins with the gathering of evidence and then generates theory after analyzing the evidence. Deductive research follows the opposite order: it begins with a theory and hypothesis, then on to collecting evidence and testing the hypothesis in light of the data collected.
-
-2.  \"All else equal\" refers to the attempt of recreating the counterfactual. The counterfactual refers to that situation where everything remains exactly the same except for the presence/absence of the treatment (the explanatory variable).
-
-3.  Just as development could cause democracy, it is also plausible that democracy causes development. For instance, foreign countries and international organizations could be more willing to provide aid to a democracy than to a non-democracy. Introducing more freedoms and allowing people to trade and engage in commerce freely could enhance development as well.
-
-4.  When two variables are correlated it means that there is some association between them: maybe they both increase/decrease at the same time, or they move in opposite directions at the same time. But this does not mean that the movement of one variable is causing the movement of the other. For example, aspirin use is correlated with headaches (aspirin use increases when headaches appear) but this does not mean that aspirins cause headaches.
 
 ## Answers to Application Questions
 
