@@ -97,7 +97,6 @@ oai() {
         --to plain \
         --metadata-file metadata.yml \
         --template templates/oai.xml \
-        --defaults settings/oai.yml \
         -o $output_directory/$output_filename.xml
     echo "🌐 The OAI-PMH record is now available in the $output_directory folder"
 }
