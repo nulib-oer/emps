@@ -149,36 +149,55 @@ $endfor$
 \starttext
 
 \setupuserpagenumber[state=stop]
-$if(title)$
+
+% title page
+\startstandardmakeup[top=]
 \startalignment[flushleft]
   {\tfd\bf\setupinterlinespace $title$}
 
   $if(subtitle)$
   \smallskip
   {\tfd\setupinterlinespace $subtitle$}
+  $endif$
+
+  $if(author)$
+  $for(author)$
+    \smallskip
+    {\tfx\setupinterlinespace $author.name$\crlf}
+  $endfor$
+  $endif$
+\stopalignment
+\stopstandardmakeup
+
+% copyright page
+\startstandardmakeup
+
+$description$
+\blank
+\copyright $publication-year$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$ All rights reserved.
+\blank
+$if(copyright.license)$
+Licensed under \goto{$copyright.license$}[url($copyright.license-uri$)]
+$endif$
+\blank
+$if(publisher)$
+  Published by $publisher.name$
+$endif$
+\blank
+$if(copyright.attribution)$
+$copyright.attribution$
+$else$
+$for(author)$$author.name$$sep$, $endfor$. \it{$title$$if(subtitle)$: $subtitle$$endif$}. $if(publisher.location)$\tf{$publisher.location$: $endif$$publisher.name$, $publication-year$.}
 $endif$
 
-$if(author)$
-$for(author)$
-  \smallskip
-  {\tfx\setupinterlinespace $author.name$\crlf}
-$endfor$
-$endif$
-
-$if(abstract)$
-\midaligned{\it Abstract}
-\startnarrower[2*middle]
-$abstract$
-\stopnarrower
-$endif$
+\stopstandardmakeup
 
 $if(date)$
   \smallskip
   {\tfa\setupinterlinespace $date$}
 $endif$
   \bigskip
-\stopalignment
-$endif$
+
 $if(abstract)$
 \midaligned{\it Abstract}
 \startnarrower[2*middle]
