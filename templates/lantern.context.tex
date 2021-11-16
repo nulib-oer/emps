@@ -148,6 +148,7 @@ $endfor$
 
 \starttext
 
+\setupuserpagenumber[state=stop]
 $if(title)$
 \startalignment[flushleft]
   {\tfd\bf\setupinterlinespace $title$}
@@ -202,7 +203,10 @@ $if(lot)$
 \completelistoftables
 $endif$
 
+\page[empty]
+\setupuserpagenumber[state=start]
 $body$
+
 
 $for(include-after)$
 $include-after$
