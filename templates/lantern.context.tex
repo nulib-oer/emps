@@ -174,15 +174,8 @@ $endfor$
 
 $description$
 \blank
-\copyright $publication-year$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$ All rights reserved.
-\blank
-$if(copyright.license)$
-Licensed under \goto{$copyright.license$}[url($copyright.license-uri$)]
-$endif$
-\blank
-$if(publisher)$
-  Published by $publisher.name$
-$endif$
+\copyright $publication-year$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$. All rights reserved. $if(copyright.license)$
+Licensed under \goto{$copyright.license$}[url($copyright.license-uri$)]$endif$ $if(publisher)$Published by $publisher.name$$endif$
 \blank
 $if(copyright.attribution)$
 $copyright.attribution$
