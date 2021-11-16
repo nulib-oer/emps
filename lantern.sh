@@ -49,7 +49,32 @@ preprocess() {
 
 # lantern output formats
 
-pdf() {
+pdf_context() {
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
+        --to context \
+        --defaults settings/context.yml \
+        -o _temp/$output_filename.tex
+    $pandoc_command _temp/chapters.md \
+        --to context \
+        --defaults settings/context.yml \
+        -o $output_directory/$output_filename.pdf
+    rm _temp/chapters.md
+    echo "📖 The PDF edition is now available in the $output_directory folder"
+}
+
+context() {
+    $pandoc_command text/*.md -o _temp/chapters.md
+    $pandoc_command _temp/chapters.md \
+        --filter $pandoc_command-crossref \
+        --defaults settings/latex.yml \
+        --no-highlight \
+        -o $output_directory/$output_filename.tex
+    rm _temp/chapters.md
+    echo "📖 The LaTeX edition is now available in the $output_directory folder"
+}
+
+pdf_latex() {
     $pandoc_command text/*.md -o _temp/chapters.md
     $pandoc_command _temp/chapters.md \
         --filter pandoc-crossref \

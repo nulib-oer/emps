@@ -1,6 +1,6 @@
 # publication settings
 
-lang: en-us 
+lang: en 
 
 toc-title: "Contents" 
 reference-section-title: "References" 
@@ -42,3 +42,18 @@ paper:
     bottom: 1in
     left: 1in
     right: 1in
+
+# ConTeXt settings
+
+papersize: a4 # a4, a5, letter
+fontsize: 12pt
+
+# these fonts are available with ConTeXt: https://wiki.contextgarden.net/ConTeXt_distribution%27s_Fonts
+mainfont: DejaVu serif
+sansfont: DejaVu sans
+monofont: DejaVu sansmono
+mathfont: Latin Modern Math
+
+linkcolor: Sapphire # color options: https://wiki.contextgarden.net/Color#Crayola_crayon_colors
+linkstyle: bold # normal, bold, slanted, boldslanted, type, cap, small
+
