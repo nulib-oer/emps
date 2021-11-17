@@ -29,6 +29,12 @@ $endif$
   color=$linkcolor$,
   contrastcolor=$linkcontrastcolor$]
 
+% setup image dimensions
+
+\setupexternalfigures
+  [maxwidth=\textwidth,
+   maxheight=0.8\textheight]
+
 % make chapter, section bookmarks visible when opening document
 \placebookmarks[chapter, section, subsection, subsubsection, subsubsubsection, subsubsubsubsection][chapter, section]
 \setupinteractionscreen[option=bookmark]
@@ -92,6 +98,9 @@ $endif$
 
 $if(headertext)$
 \setupheadertexts$for(headertext)$[$headertext$]$endfor$
+$else$
+\setupheadertexts[\bf {\getmarking[chapter]}]
+
 $endif$
 
 $if(footertext)$
