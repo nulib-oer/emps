@@ -56,9 +56,8 @@ When the nodes in a network represent people, organizations, or another type of 
 
 There are different ways to represent a network. The two most accessible methods are sociograms and adjacency matrices. The sociogram in figure \@ref(fig:fig11-1) and the adjacency matrix in Table 11.1 are representations of the same network.
 
-```{r fig11-1, fig.align='center', fig.cap='A sociogram for a network with nodes [A, B, C, D, E]. Each circle represents a node and each line represents a relationship between the two nodes it connects', echo=FALSE}
-knitr::include_graphics('images/social-networks/11-1.png', dpi = NA)
-```
+![A sociogram for a network with nodes [A, B, C, D, E]. Each circle represents a node and each line represents a relationship between the two nodes it connects](images/social-networks/11-1.png){fig:fig11-1}
+
 
          $A$   $B$   $C$   $D$   $E$
   ----- ----- ----- ----- ----- -----
@@ -80,9 +79,7 @@ To understand how an adjacency matrix works, first recall that a **matrix** is a
 
 The two most fundamental attributes of a network are whether it is *directed* and whether it is *weighted*.
 
-```{r fig11-2, fig.align='center', fig.cap='An undirected (left) and directed (right) graph of a friendship network among students. The ties in the undirected graph represent a mutual friendship between pairs of students. For example, there is a tie between Orla and Parveen, indicating that Orla is friends with Parveen and that Parveen is friends with Orla|their relationship is symmetric.', echo=FALSE}
-knitr::include_graphics('images/social-networks/11-2.png', dpi = NA)
-```
+![An undirected (left) and directed (right) graph of a friendship network among students. The ties in the undirected graph represent a mutual friendship between pairs of students. For example, there is a tie between Orla and Parveen, indicating that Orla is friends with Parveen and that Parveen is friends with Orla|their relationship is symmetric.](images/social-networks/11-2.png){fig:fig11-2}
 
 Note the arrows in the sociogram to the right; these indicate the direction of perceived friendship from one node to another. For example: the two-way arrow between Mega and Nyasha indicates that each considers the other a friend; the one-way arrow pointing from Kiko to Jaylen, however, indicates that Kiko considers Jaylen a friend, but also that Jaylen does not consider Kiko a friend --their relationship is _asymmetric_.
 
@@ -174,7 +171,7 @@ A node's **centrality** can be used to gauge how important it is, for various co
 
 Note that though these metrics can be computed for all nodes in a graph, they only make sense for nodes within a connected component; this is because the distance between nodes that are not connected is undefined. These node-specific measures are therefore only computed based on the other nodes in a given node's connected component Recall, however, that a connected graph contains a single connected component in which each node is connected to all others.
 
-**Betweenness centrality.** The **betweenness centrality** metric evaluates a given node's ability to create connections *between* other nodes. According to Freeman, who formalized the definition of the metric, betweenness is important because "a vertex falling between two others can facilitate, block, distort, or falsify communication between the two; it can more or less completely control their communication" ([@Freeman1977 p.36]). For a given target node, betweenness centrality is found by computing the sum, for all other pairs of nodes in the component, of the ratio of the number of geodesics between the pair of nodes that pass through the target node to the total number of geodesics between the pair of nodes [@Freeman1977]. More formally, we can write the definition of betweenness for a node $v$ as: $$Betweenness(v) = \sum_{i \neq j \neq v}^{n}\frac{g_{ij}(v)}{g_{ij}} \label{eq:Betweenness}$$ where $g_{ij}$ is the number of geodesics between node $i$ and node $j$, and $g_{ij}(v)$ is the number of such paths that pass through node $v$ [@Freeman1977]. The graph in figure \@ref(fig:fig11-7) displays each node's betweenness.
+**Betweenness centrality.** The **betweenness centrality** metric evaluates a given node's ability to create connections *between* other nodes. According to Freeman, who formalized the definition of the metric, betweenness is important because "a vertex falling between two others can facilitate, block, distort, or falsify communication between the two; it can more or less completely control their communication" ([@Freeman1977 p.36]). For a given target node, betweenness centrality is found by computing the sum, for all other pairs of nodes in the component, of the ratio of the number of geodesics between the pair of nodes that pass through the target node to the total number of geodesics between the pair of nodes [@Freeman1977]. More formally, we can write the definition of betweenness for a node $v$ as: $$Betweenness(v) = \sum_{i \neq j \neq v}^{n}\frac{g_{ij}(v)}{g_{ij}}$$ where $g_{ij}$ is the number of geodesics between node $i$ and node $j$, and $g_{ij}(v)$ is the number of such paths that pass through node $v$ [@Freeman1977]. The graph in figure \@ref(fig:fig11-7) displays each node's betweenness.
 
 ![Betweenness (left) and closeness (right) for the undirected friendship network. Note that Parveen has the highest value for each measure](images/social-networks/11-7.png){fig:fig11-7}
 

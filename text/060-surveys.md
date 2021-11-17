@@ -182,13 +182,9 @@ By nature, a survey is a **[large-N, observational study]{.underline}**; in-dept
 
 **[Coverage error]{.underline}**: This error occurs when there is not a one-to-one correspondence between the target population and the sampling frame from which a sample is drawn. A Sampling frame is the list of all the units within a population that could be sampled. It could include not only individuals, but also households, schools, companies or other institutions depending on our research question and unit of analysis. Ideally, the sampling frame perfectly coincides with the target population; but when it does not coincide, we have coverage error.
 
-```{r coverage_error, fig.align='center', fig.cap='Coverage Error', echo=FALSE}
-knitr::include_graphics('images/surveys/coverage_error.png', dpi = NA)
-```
+![Coverage Error](images/surveys/coverage_error.png){fig:coverage_error}
 
-```{block, type="question"}
 **Check-in question:** what could be the solutions to social desirability bias or non-response for sensitive questions included in the survey? Be creative!
-```
 
 ## Broader significance/use in political science
 

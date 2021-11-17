@@ -8,8 +8,9 @@ category: 999
 
 ## Calculating the Regression Coefficient
 
-For bivariate regressions, you can calculate the coefficient yourself. The equation is $$\begin{aligned}
-    b = \frac{S_Y}{S_X}R\end{aligned}$$
+For bivariate regressions, you can calculate the coefficient yourself. The equation is 
+
+$$b = \frac{S_Y}{S_X}R$$
 
 where $S_Y$ is the standard deviation in $Y$, $S_X$ is the standard deviation in $X$, and $R$ is the correlation between $X$ and $Y$. In our example on gender equality and education, the values are:\
 $R = 0.83$\
@@ -43,10 +44,12 @@ $b = 11.6$\
 $z = 1.96$\
 $SE = 0.62$
 
-So the confidence interval is: $$\begin{aligned}
+So the confidence interval is: 
+
+$$
 &[b - z \cdot SE ; b + z\cdot SE]\\
 = &[11.6 - 1.96 \cdot 0.62 ; 11.6 + 1.96 \cdot 0.62 ]\\
-= &[10.4; 12.8]\end{aligned}$$
+= &[10.4; 12.8]$$
 
 ## Error Terms
 
