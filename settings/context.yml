@@ -20,8 +20,8 @@ bibliography:
 # Filters are run in the order specified.
 # To include the built-in citeproc filter, use either `citeproc`
 # or `{type: citeproc}`.
-#filters:
-#- wordcount.lua
+filters:
+- lib/lua/questions.lua
 #- type: json
 #  path: foo.lua
 
