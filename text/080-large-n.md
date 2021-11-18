@@ -22,13 +22,13 @@ Then we move on to variations of regression, how to interpret regression results
 
 You have two variables that you think might be related in a linear fashion. Let's say you think that a country's level of education (measured in expected years of education) will be related to its level of gender equality (we'll use a points system based on the UN gender inequality index) . Using software, you can quite easily calculate a linear correlation coefficient for these two variables, denoted by $R$. For these two variables, we get the result $R=0.83.$ That number is a bit abstract but the graph below, figure \@ref(fig:correlation), visualizes what different correlations look like.
 
-![Different correlations, visualized. The numbers represent correlation coefficients. Based on @boigelotdenisExampleCorrelationVarious2011, modified by Max Weylandt](images/largen/correlation.png){fig:correlation}
+![Different correlations, visualized. The numbers represent correlation coefficients. Based on @boigelotdenisExampleCorrelationVarious2011, modified by Max Weylandt](images/largen/correlation.png){#fig:correlation}
 
 Correlation coefficients can range from -1 to 1. Imagine that the different graphs in figure \@ref(fig:correlation) represent the different possible relationships between education (along the $X$-axis) and gender equality (on the $Y$-axis). As the top line of figure 8.1 shows, a correlation coefficient closer to either pole means a strong correlation while a number around 0 means a weak correlation. If $R=-0.8$, there is a strong negative correlation (at larger values of X, Y tends to have lower values). If $R=0.4$, there is a moderate positive correlation (at larger values of X, Y tends to have higher values). The correlation we got indicates that we have a fairly strong positive correlation. In other words, countries with higher levels of education tend to have higher gender equality overall.
 
 But also note the difference between the two lines in the graph above. In the bottom line, every image represents a perfect correlation, even though the relationships between $X$ and $Y$ are clearly very different. On the first graph from the left, $Y$ increases a lot as $X$ moves from its lowest to its highest value. Two images over, $Y$ still increases as $X$ does, but much less so. They both move in the same direction perfectly (they have a correlation coefficient of $R=1$), but the slopes are different. This has implications for our findings: is gender equality slightly higher in countries with more education, or a lot higher? Correlation cannot answer that question. Later, we'll see how regression accounts for this difference in slopes. By the way, it is always a good idea to visualize your data. The graphs in figure \@ref(fig:dino) below show three datasets that have almost identical means, medians, and correlations - yet look quite different when plotted.
 
-![Based on the "Datasaurus Dozen" by @matejkaSameStatsDifferent2017](images/largen/dino.png){fig:dino}
+![Based on the "Datasaurus Dozen" by @matejkaSameStatsDifferent2017](images/largen/dino.png){#fig:dino}
 
 Correlations can easily be calculated with statistical software, and the number of datasets available to researchers has exploded in recent years. This means that, now more than ever, you can conduct exploratory analyses with a large number of variables to see which ones are related to each other or the outcome you are interested in. This process, of looking at large number of variables and seeing how they relate, is sometimes called **data-mining**. Data mining can be an acceptable part of an inductive theory-building process (see [ch02](./casual-inference.html)), but it is a fraught process: when looking at a large number of variables you are bound to find some that show a relationship, and it can be tempting (even subconsciously) to write up only results that confirm our hypothesis rather than those that don't.
 
@@ -42,7 +42,7 @@ It tells us how strongly the variables in question are associated. It does not t
 
 Correlations are a useful first look at the relationship between two variables, but linear regression is far more powerful. The intuition behind linear regression is simple: we want to find the line that best fits all of our data points. This is because the line that fits the data best summarizes the relationship between variables, and we can use this line to learn not just the direction of an association (positive or negative) but also its strength: as $X$ changes, *how much* does $Y$ tend to change? Regression also lets us conduct significance tests to establish whether the relationship between variables actually exists or just appears to occur due to chance.
 
-![A simple scatterplot](images/largen/scatter.png){fig:scatter}
+![A simple scatterplot](images/largen/scatter.png){#fig:scatter}
 
 Perhaps it's best to start with an image. Figure \@ref(fig:scatter) charts the values for 147 countries' expected years of education against their scores on the equality index, with each country represented by a dot. Just from looking at it, you can see that countries with a high level of education tend to have higher levels of overall gender equality, even if not all countries neatly fit that description. In other words, as predicted by our correlation coefficient of 0.85, it seems that there is a relationship between education and gender equality. But how strong is this association?
 
@@ -54,7 +54,7 @@ Take a second to appreciate what we have done here. We've taken data on two vari
 
 In our example, the intercept $a=-89.2$. This is a good time to warn you about extrapolating using data from regression. That intercept is impossible, because the way our outcome variable is set up, there are only positive scores for equality. Yet because of the best fit line, our regression predicts an impossible value for $Y$ when $X=0$. Always remember that regression fits the line based on the data available. If you want to use it to make prediction about data points far away from the data you actually have, it is possible the prediction will be way off. (By the way, you can find the values for both $a$ and $b$ in Table 8.1 below. We'll discuss how to interpret the table in more detail below, but feel free to see how much you can get from it right now).
 
-![The regression line](images/largen/line.png){fig:line}
+![The regression line](images/largen/line.png){#fig:line}
 
 ## Method: detail
 
@@ -62,7 +62,7 @@ In our example, the intercept $a=-89.2$. This is a good time to warn you about e
 
 How do we find the line that fits the data best? Let's restate our aim: we want a line where, given a certain $X$ value, the $Y$ value predicted by the line is really close to the actual value in the data. That seems like a reasonable definition of 'good fit.' Rephrased in mathematical terms, we want to be as small as possible. The thing we want to minimize is called a **residual**. For example, in \@ref(fig:line), Serbia has an expected years of schooling value of $14.6$ and a gender equality score of $106$. Those are the actual values in the dataset. However, the regression line predicts that an education (i.e. $X$) value of $14.6$ is associated with a gender inequality score of $82.94$ [[$Y= a+ bX= -89.2 + 11.6 \cdot(14.6) = 80.16$]{style="color:DarkBlue"}]. The residual amounts to $25.4$ [[$106 - 80.16=25.4$]{style="color:DarkBlue"}], and is highlighted with a blue line in \@ref(fig:residuals).
 
-![Visualizing Residuals](images/largen/residuals.png){fig:residuals}
+![Visualizing Residuals](images/largen/residuals.png){#fig:residuals}
 
 We take a cumulative look at all of our residuals to see which line fits best. There are several possible methods for doing this. Simply adding up the residuals would give us misleading results: some are negative and some are positive, and they would cancel each other out. To deal with this problem we square each residual. This makes all values positive, and has the added benefit of penalizing larger differences between our line and actual values. We find the line that best fits our data by minimizing the squared residuals. This procedure is called **ordinary least squares**.
 
@@ -149,7 +149,7 @@ In recent years, more authors have begun to display regression results in a grap
 
 This figure also shows an example an example of something you should know called a **dummy variable**. The term 'dummy' bears no relation to what these variables do: they only take two values (yes or no, 1 or 0) and can be used to compare groups. When we include a dummy variable in a regression, the output tells us the difference in average Y values across the two groups. In this example, females receive aid at lower rates than males (the two values of these dummy variables). If you look at the variables in figure 8.6 you will see that many of them are dummies: they denote membership in ethnic groups, partisanship, and more. Rather than interpreting the coefficient as \"a one unit increase in X is associated with a $b$ increase in Y,\" we think \"being X rather than not is associated with a $b$ increase in Y.\"
 
-![Adapted from Dionne and Horowitz 2016, 220](images/largen/dotwhisker.png){fig:dotwhisker}
+![Adapted from Dionne and Horowitz 2016, 220](images/largen/dotwhisker.png){#fig:dotwhisker}
 
 ## Applications
 
@@ -212,11 +212,11 @@ In the second column of Table 8.4, the coefficient for the variable 'High school
 
 Instead we can do an anti-log on the coefficients to get odds ratios. What are odds ratios? If the odds of something happening are 50-50, the odds ratio is $\frac{50}{50}=1$, if they are 80-20, the ratio is $\frac{80}{20}=4$. These ratios are hard to interpret. We can convert them to probabilities, but these ratios change depending on the value of $X$. While the interpretation is tricky, know the basic intuition: the coefficients tell us whether the variable is associated with a higher (or lower) likelihood of observing the outcome.
 
-![Adapted from Tripp and Kang 2008, 350](images/largen/trippkang.png){fig:trippkang}
+![Adapted from Tripp and Kang 2008, 350](images/largen/trippkang.png){#fig:trippkang}
 
 ### Experiments
 
-![Adapted from Tripp and Kang 2008, 350](images/largen/mengel.png){fig:mengel}
+![Adapted from Tripp and Kang 2008, 350](images/largen/mengel.png){#fig:mengel}
 
 You will also likely encounter papers using experiments or quasi-experiments, which also use regression. As we discussed above, we can use dummy variables to compare means across groups. In experiments, this means we can use regressions to see how the treatment affected the treatment and control groups in the experiment, but also how the effects differ for different demographic groups, which we can add as control variables.
 

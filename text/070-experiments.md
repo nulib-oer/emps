@@ -22,7 +22,7 @@ But Gosnell's work was not immediately appreciated by political scientists, and 
 
 And from that point, experiments began steadily becoming a mainstay research method in political science. The figure below shows the number of experiments published every year in the *American Political Science Review*, one of the top publications in political science. As the figure shows, following Iyengar, Peters, and Kinder's work in the 1980s, experiments started to be published in this journal at an increasing rate. However, it is important to keep in mind that experiments are not even close to being the dominant research method. If you have already read [ch06](./surveys.html), then you already know a good deal about the most dominant quantitative research method: surveys.
 
-![totals are aggregated per decade](images/trend.png){fig:trend}
+![totals are aggregated per decade](images/trend.png){#fig:trend}
 
 ## Method: setup/overview
 

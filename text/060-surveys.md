@@ -70,7 +70,7 @@ Then why do we not just always use simple random sampling Why do we have all the
 
 Stratified sampling differs from SRS in that it first divides the entire population into smaller homogeneous sub-groups of strata. That is, each stratum is composed of similar observations -- e.g., based on income, educational level, race or gender. Then, we take the random samples from each stratum and pool them together. If we have distinct subgroups based on shared characteristics, we might use stratified sampling to highlight these inter-group differences.
         
-![Stratified Random Sampling. Note: The population is grouped into strata based on shared characteristics](images/surveys/Virginia_sampling.png){fig:stratified-random-sampling}
+![Stratified Random Sampling. Note: The population is grouped into strata based on shared characteristics](images/surveys/Virginia_sampling.png){#fig:stratified-random-sampling}
 
 Because stratification takes into characteristics of the original population, stratified sampling can better capture the key population characteristics in the sample. Through stratified sampling, researchers can ensure that certain subgroups are include in the sample. Moreover, stratification gives a smaller error in estimation and greater precision than SRS especially when the inter-group differences are large. For example, in surveying Americans' racial perceptions and policy attitudes, Masuoka and Junn used stratified sampling to recruit minority respondents [@masuoka2013politics], as SRS possibly would not have guaranteed sufficient number of Asian or Latino participants. Likewise, YouGov also uses stratified sampling to ensure that the survey sample resembles the composition of the American population; age, race, gender and education are typically used as stratification variables. Cassesse et al. used YouGov's Cooperative Congressional Election Study, which used stratified sampling of 50,000 Americans, to examine how white Americans' racial attitudes affect anti-gender discrimination policy supports [@cassese2015racializing].
 
@@ -78,7 +78,7 @@ Despite its strengths, stratified sampling cannot be used when stratification is
 
 **Cluster Random Sampling**
 
-![Cluster Sampling. Note: Here, the population is divided into several clusters; note that the entire cluster is sampled](images/surveys/Cluster-sampling.png){fig:Cluster-sampling}
+![Cluster Sampling. Note: Here, the population is divided into several clusters; note that the entire cluster is sampled](images/surveys/Cluster-sampling.png){#fig:Cluster-sampling}
 
 As in stratified random sampling, the population is divided into sub-groups, this time called clusters. Unlike strata, however, clusters are not made up of homogeneous observations. After clustering the population into various subgroups, we now take the random sampling of the groups (i.e., clusters). In cluster sampling, each cluster is treated as the sampling unit; in other words, sampling is done on clusters. Therefore, all the observations in the cluster are selected in the sample.
 
@@ -134,11 +134,11 @@ In analyzing the survey results, we must keep in mind that we are trying to esti
 
 Confidence interval = sample statistic $\pm$ margin of error
     
-![Margin of Error and Confidence Interval](images/surveys/Marginoferror.png){fig:Marginoferror}
+![Margin of Error and Confidence Interval](images/surveys/Marginoferror.png){#fig:Marginoferror}
 
 As we have seen in the hypothesis testing chapter, confidence intervals mean that we are confident that the true parameter lies within that range. Conventionally, political scientists use 95 percent confidence level; this means that 95 percent of the time, the value obtained from a random sample will fall within this interval. Note from the Figure 5 that the margin of error gets smaller with a bigger sample.
     
-![Confidence Interval in a Poll](images/surveys/Confidence_interval.png){fig:Confidence_interval}
+![Confidence Interval in a Poll](images/surveys/Confidence_interval.png){#fig:Confidence_interval}
 
 **Check-in question:** Can we say that the Republican candidate is leading based on the two polls presented in Figure 6? If so, why? If not, then why not?
 
@@ -182,7 +182,7 @@ By nature, a survey is a **[large-N, observational study]{.underline}**; in-dept
 
 **[Coverage error]{.underline}**: This error occurs when there is not a one-to-one correspondence between the target population and the sampling frame from which a sample is drawn. A Sampling frame is the list of all the units within a population that could be sampled. It could include not only individuals, but also households, schools, companies or other institutions depending on our research question and unit of analysis. Ideally, the sampling frame perfectly coincides with the target population; but when it does not coincide, we have coverage error.
 
-![Coverage Error](images/surveys/coverage_error.png){fig:coverage_error}
+![Coverage Error](images/surveys/coverage_error.png){#fig:coverage_error}
 
 **Check-in question:** what could be the solutions to social desirability bias or non-response for sensitive questions included in the survey? Be creative!
 

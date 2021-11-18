@@ -10,7 +10,7 @@ category: 11
 
 These days, references to machine learning are almost ubiquitous. If you follow the news, you have probably heard that machine learning is used in a wide range of contexts: e.g., to detect fraudulent transactions, predict stock prices, perform facial recognition, customize search results, and even guide self-driving cars. But what exactly is machine learning? Machine learning is often conflated with related concepts including artificial intelligence, automation, and statistical computing. Part of this confusion and ambiguity is due to the reality that even among relevant experts in statistics and computer science, there is no single "correct" definition of machine learning. However, there are two well-known formal definitions. Both definitions were cited by Andrew Ng [@ng-a], in his highly popular Stanford course on machine learning (available through [Coursera](https://www.coursera.org/learn/machine-learning)).
 
-![Traditional Programming v. Machine Learning](images/ml/jl-figure1.png){fig:jl-figure1}
+![Traditional Programming v. Machine Learning](images/ml/jl-figure1.png){#fig:jl-figure1}
 
 The first definition is by Arthur Samuel, a former researcher at IBM and early pioneer in machine learning. In his view, machine learning is a *"field of study that gives computers the ability to learn without being explicitly programmed."* This definition is useful because it alludes to a central distinction between traditional programming and machine learning: i.e., in traditional programming, a computer takes in the data and the rules and generates the output; in machine learning, a computer takes the data and the output and generates the rules that describe the relationship between the input and the output. Figure \@ref(fig:jl-figure1) provides an illustration of this idea.
 
@@ -40,7 +40,7 @@ Recall that we randomly assigned the observations in the original full dataset t
 
 If we attempt to minimize training MSE, the algorithms are more likely to estimate highly flexible models that try to touch every data point in the feature space of the training dataset. This might initially sound nice, but it means that the model is **overfitting** to the training set: i.e., the model is attempting to capture both the real patterns due to the true ${f}(.)$, as well as the observed but spurious deviations from ${f}(.)$ that are due to the random noise ($\epsilon$). The problem here is that this kind of highly flexible model tends to generate a lower training MSE, but performs poorly on the test set---which has the same underlying patterns due to ${f}(.)$, but different observed deviations from ${f}(.)$ because of $\epsilon$. Figure \@ref(fig:jl-figure2) provides an illustration of this idea. In this example, the true relationship between $X_{1}$ and $Y$ is linear (see the graph in the middle); we know this for certain because these data were simulated.
 
-![Modeling True Relationship v. Overfitting](images/ml/jl-figure2.png){fig:jl-figure2}
+![Modeling True Relationship v. Overfitting](images/ml/jl-figure2.png){#fig:jl-figure2}
 
 Thus, it is a better idea to try and minimize test error. In order to generate a smaller test error, the algorithms need to estimate a model that is generalizable. That is, they need to estimate models that do a better job of capturing the true relationship between the set of predictors ($X_{1},X_{2}$) and the $Y$, while ignoring the random observed deviations from the ${f}(.)$ due to $\epsilon$ (per Equation 1). Machine learning practitioners often refer to this approach as $"$focusing on the signal and ignoring the noise.$"$
 
@@ -86,7 +86,7 @@ In machine learning, **bias** is a measure of the size of the gap between $\hat{
 
 However, it is possible for the model to be too flexible. **Variance** is a measure of the stability or consistency of the estimated model across training sets. If small changes to the training set (e.g., dropping a few observations) causes large changes in $\hat{f}(.)$, then the variance is high. A highly flexible model tends to reduce bias but also increase variance (hence the idea of a $"$trade-off$"$). Thus, the goal is to fit a model that is flexible enough to capture the true relationship between the set of predictors $(X_{1},X_{2},...,X_{p})$ and $Y$, but not so flexible that it is also fitting to the observed deviations from ${f}(.)$ in the training set due to $\epsilon$.
 
-![Bias-Variance Trade-offs](images/ml/jl-figure3.png){fig:jl-figure3}
+![Bias-Variance Trade-offs](images/ml/jl-figure3.png){#fig:jl-figure3}
 
 Figure \@ref(fig:jl-figure3) provides an illustration of this idea. The first model is not flexible enough, leading to high bias (also known as **underfitting**); on the other hand, the third model is too flexible, which leads to higher variance across slightly different training sets (**overfitting**). The second model imposes the ideal amount of flexibility, which optimizes the bias-variance trade-off and yields the smallest test MSE of the three alternatives.
 
@@ -114,7 +114,7 @@ We can also classify machine learning methods according to whether they predict 
 
 In **unsupervised learning**, the purpose of the machine learning algorithm is to examine the underlying structure of the data and identify $"$hidden$"$ patterns. It is not attempting to correctly predict an outcome. One well-known example of an unsupervised learning method is clustering: clustering algorithms (e.g., hierarchical, k-means) identify latent groups of observations by examining the relationships among the variables associated with the observations (Bryan 2004; Wagstaff and Cardie 2000; Witten 2011). In this case, we do not know ahead of time what the $"$correct$"$ or $"$true$"$ number of clusters is. Researchers can use clustering algorithms to identify more internally homogeneous groups of subjects (e.g., with respect to demographic characteristics, attitudes, preferences, consumption patterns). Figure \@ref(fig:jl-figure4) provides an illustration of how we may organize machine learning methods by type and subtype. Please note that the list of examples is not meant to be exhaustive.
 
-![Types of Machine Learning Methods](images/ml/jl-figure4.png){fig:jl-figure4}
+![Types of Machine Learning Methods](images/ml/jl-figure4.png){#fig:jl-figure4}
 
 **Check-in Question 4:** What is the main difference between supervised and unsupervised learning?
 
@@ -164,7 +164,7 @@ $$G= \sum _{k=1}^{K}p_{mk} \left( 1-p_{mk} \right)$$
 
 How does this work in practice? For example, let us assume that in the training set, being white v. not being white was the strongest individual predictor of the Trump vote (i.e., it would maximize node purity). If this were the case, then the first split would be based on race: all white respondents would be assigned to the right branch, and all non-white respondents would be assigned to the left branch (see Figure \@ref(fig:jl-figure5) below). Next, let us assume that among white respondents, being above the mean on the 1-7 point political conservatism scale is the strongest predictor of the Trump vote; if so, then the second split would be based on whether the white respondents' conservatism score is $\leq  4.3$ (left branch) or $> 4.3$ (right branch).
 
-![Example of a Decision Tree](images/ml/jl-figure5.png){fig:jl-figure5}
+![Example of a Decision Tree](images/ml/jl-figure5.png){#fig:jl-figure5}
 
 In this simple example, the observations (or respondents) in the training set are assigned to one of three non-overlapping regions in the predictor space: ${R_{1}= \{Vote \vert minority}\}$, $R_{2} = \{Vote \vert white, conservatism \leq 4.3\}$, and $R_{3}= \{Vote \vert white, conservatism > 4.3 \}$. To predict the outcome class of an observation in the validation or test set, we simply look at which region the observation would be assigned to based on its predictor values (e.g., is $x_{1} = white$?), and then choose the most common class of that region. For instance, if the test observation would belong to $R_{3}$, and $70\%$ of the training observations in $R_{3}$ voted for Trump, then the predicted class of that test observation would be $Vote=1$. In general, of course, there are usually more than three regions (or terminal nodes); the splitting ends once a stopping point is reached: e.g., in order to satisfy the minimum terminal node size.
 
