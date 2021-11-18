@@ -10,8 +10,8 @@ metadata-file:
 from: markdown
 to: latex
 
-resource-path: ["source/images/"]
-template: templates/lantern.tex
+resource-path: ["images"]
+template: templates/lantern.latex.tex
 standalone: true
 
 # table of contents

@@ -1,6 +1,8 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
+#
+# this script contains functions that produce Lantern's input and output files
 
-# custom variables
+# custom settings
 
 output_filename='Clipperton_EMPS'
 output_directory='public'
@@ -15,34 +17,49 @@ pandoc_command='pandoc --quiet' # change to 'pandoc --verbose' to debug
 mkdir -p _temp/
 mkdir -p $output_directory
 
-# convert word processing files to markdown
+# convert manuscript files to markdown
 
 preprocess() {
-    docx_files=`ls -1 source/preprocess/*.docx 2>/dev/null | wc -l`
-    odt_files=`ls -1 source/preprocess/*.odt 2>/dev/null | wc -l`
-    latex_files=`ls -1 source/preprocess/*.tex 2>/dev/null | wc -l`
+    local docx_files=`ls -1 preprocess/*.docx 2>/dev/null | wc -l`
+    local odt_files=`ls -1 preprocess/*.odt 2>/dev/null | wc -l`
+    local latex_files=`ls -1 preprocess/*.tex 2>/dev/null | wc -l`
 
     if [ $docx_files != 0 ] ; then 
-    for f in source/preprocess/*.docx
+    for file in preprocess/*.docx
         do 
-            $pandoc_command "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
-            mv "${f%.docx}.md" source/chapters/
+            $pandoc_command "$file" \
+                --to markdown \
+                --wrap=none \
+                --extract-media=images \
+                -standalone \
+                --output "${file%.*}.md"
+            mv "${file%.docx}.md" text/chapters/
         done
     fi
 
     if [ $odt_files != 0 ] ; then 
     for f in source/preprocess/*.odt
         do 
-            $pandoc_command "$f" -t markdown --wrap=none --extract-media=assets/images -s -o "${f%.*}.md"
-            mv "${f%.odt}.md" source/chapters/
+            $pandoc_command "$file" \
+                --to markdown \
+                --wrap=none \
+                --extract-media=images \
+                -standalone \
+                --output "${file%.*}.md"
+            mv "${file%.docx}.md" text/chapters/
         done
     fi
 
     if [ $latex_files != 0 ] ; then 
     for f in source/preprocess/*.tex
         do 
-            $pandoc_command "$f" -t latex --wrap=none -s -o "${f%.*}.md"
-            mv "${f%.odt}.md" source/chapters/
+            $pandoc_command "$file" \
+                --to markdown \
+                --wrap=none \
+                --extract-media=images \
+                -standalone \
+                --output "${file%.*}.md"
+            mv "${file%.docx}.md" text/chapters/
         done
     fi
 }
@@ -50,38 +67,34 @@ preprocess() {
 # lantern output formats
 
 pdf_context() {
+    # combine all markdown files into one
     $pandoc_command text/*.md -o _temp/chapters.md
+    # convert markdown to ConTeXt
     $pandoc_command _temp/chapters.md \
         --to context \
         --defaults settings/context.yml \
-        -o _temp/$output_filename.tex
+        --output _temp/$output_filename.tex
+    # convert ConTeXt to PDF    
     $pandoc_command _temp/chapters.md \
         --to context \
         --defaults settings/context.yml \
-        -o $output_directory/$output_filename.pdf
-    rm _temp/chapters.md
+        --output $output_directory/$output_filename.pdf
     echo "📖 The PDF edition is now available in the $output_directory folder"
 }
 
-context() {
-    $pandoc_command text/*.md -o _temp/chapters.md
-    $pandoc_command _temp/chapters.md \
-        --filter $pandoc_command-crossref \
-        --defaults settings/latex.yml \
-        --no-highlight \
-        -o $output_directory/$output_filename.tex
-    rm _temp/chapters.md
-    echo "📖 The LaTeX edition is now available in the $output_directory folder"
-}
-
 pdf_latex() {
+    # combine all markdown files into one
     $pandoc_command text/*.md -o _temp/chapters.md
+    # convert markdown to LaTeX
     $pandoc_command _temp/chapters.md \
-        --filter pandoc-crossref \
+        --to latex \
         --defaults settings/latex.yml \
-        --no-highlight \
-        -o $output_directory/$output_filename.pdf
-    rm _temp/chapters.md
+        --output _temp/$output_filename.tex
+    # convert LaTeX to PDF    
+    $pandoc_command _temp/chapters.md \
+        --to latex \
+        --defaults settings/latex.yml \
+        --output $output_directory/$output_filename.pdf
     echo "📖 The PDF edition is now available in the $output_directory folder"
 }
 
@@ -91,7 +104,7 @@ latex() {
         --filter $pandoc_command-crossref \
         --defaults settings/latex.yml \
         --no-highlight \
-        -o $output_directory/$output_filename.tex
+        --output $output_directory/$output_filename.tex
     rm _temp/chapters.md
     echo "📖 The LaTeX edition is now available in the $output_directory folder"
 }

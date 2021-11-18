@@ -46,10 +46,9 @@ $SE = 0.62$
 
 So the confidence interval is: 
 
-$$
-&[b - z \cdot SE ; b + z\cdot SE]\\
-= &[11.6 - 1.96 \cdot 0.62 ; 11.6 + 1.96 \cdot 0.62 ]\\
-= &[10.4; 12.8]$$
+$[b - z \cdot SE ; b + z\cdot SE]$\
+$= [11.6 - 1.96 \cdot 0.62 ; 11.6 + 1.96 \cdot 0.62 ]$\
+$= [10.4; 12.8]$
 
 ## Error Terms
 
