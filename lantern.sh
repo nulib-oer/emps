@@ -25,41 +25,41 @@ preprocess() {
     local latex_files=`ls -1 preprocess/*.tex 2>/dev/null | wc -l`
 
     if [ $docx_files != 0 ] ; then 
-    for file in preprocess/*.docx
+    for FILE in preprocess/*.docx
         do 
-            $pandoc_command "$file" \
+            $pandoc_command "$FILE" \
                 --to markdown \
                 --wrap=none \
                 --extract-media=images \
                 -standalone \
-                --output "${file%.*}.md"
-            mv "${file%.docx}.md" text/chapters/
+                --output "${FILE%.*}.md"
+            mv "${FILE%.docx}.md" text/chapters/
         done
     fi
 
     if [ $odt_files != 0 ] ; then 
-    for f in source/preprocess/*.odt
+    for FILE in source/preprocess/*.odt
         do 
-            $pandoc_command "$file" \
+            $pandoc_command "$FILE" \
                 --to markdown \
                 --wrap=none \
                 --extract-media=images \
                 -standalone \
-                --output "${file%.*}.md"
-            mv "${file%.docx}.md" text/chapters/
+                --output "${FILE%.*}.md"
+            mv "${FILE%.docx}.md" text/chapters/
         done
     fi
 
     if [ $latex_files != 0 ] ; then 
-    for f in source/preprocess/*.tex
+    for FILE in source/preprocess/*.tex
         do 
-            $pandoc_command "$file" \
+            $pandoc_command "$FILE" \
                 --to markdown \
                 --wrap=none \
                 --extract-media=images \
                 -standalone \
-                --output "${file%.*}.md"
-            mv "${file%.docx}.md" text/chapters/
+                --output "${FILE%.*}.md"
+            mv "${FILE%.docx}.md" text/chapters/
         done
     fi
 }
@@ -73,7 +73,7 @@ pdf_context() {
     $pandoc_command _temp/chapters.md \
         --to context \
         --defaults settings/context.yml \
-        --output _temp/$output_filename.tex
+        --output $output_directory/$output_filename.tex
     # convert ConTeXt to PDF    
     $pandoc_command _temp/chapters.md \
         --to context \
@@ -89,7 +89,7 @@ pdf_latex() {
     $pandoc_command _temp/chapters.md \
         --to latex \
         --defaults settings/latex.yml \
-        --output _temp/$output_filename.tex
+        --output $output_directory/$output_filename.tex
     # convert LaTeX to PDF    
     $pandoc_command _temp/chapters.md \
         --to latex \
@@ -98,23 +98,11 @@ pdf_latex() {
     echo "📖 The PDF edition is now available in the $output_directory folder"
 }
 
-latex() {
-    $pandoc_command text/*.md -o _temp/chapters.md
-    $pandoc_command _temp/chapters.md \
-        --filter $pandoc_command-crossref \
-        --defaults settings/latex.yml \
-        --no-highlight \
-        --output $output_directory/$output_filename.tex
-    rm _temp/chapters.md
-    echo "📖 The LaTeX edition is now available in the $output_directory folder"
-}
-
 docx() {
     $pandoc_command text/*.md -o _temp/chapters.md
     $pandoc_command _temp/chapters.md \
         --defaults settings/docx.yml \
         -o $output_directory/$output_filename.docx
-    rm _temp/chapters.md
     echo "📖 The DOCX edition is now available in the $output_directory folder"
 }
 
@@ -124,9 +112,8 @@ epub() {
         --defaults settings/epub.yml \
         --resource-path=.:images \
         --mathml \
-        -o $output_directory/$output_filename.epub
-    rm _temp/chapters.md
-    echo "📖 The EPUB edition is now available in $epub";
+        --output $output_directory/$output_filename.epub
+    echo "📖 The EPUB edition is now available in the $output_directory folder";
 }
 
 oai() {
@@ -163,24 +150,26 @@ copy_assets() {
 }
 
 extract_metadata() {
-    echo "Extracting metadata..."
+    echo "Extracting chapter metadata..."
     for FILE in text/*.md; do
         # sets the h1 markdown heading as the chapter title
-        chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
-        basename="$(basename "$FILE" .md)"
+        local chapter_title="$(grep '^# ' $FILE | sed 's/# //')"
+        local basename="$(basename "$FILE" .md)"
 
         # assigns categories
         $pandoc_command "$FILE" \
             --metadata basename=$basename \
             --template templates/website/category.template.txt \
-            --to html -o "_temp/$basename.category.txt"
+            --to html \
+            --output "_temp/$basename.category.txt"
 
         # converts metadata to json
         $pandoc_command "$FILE" \
             --metadata chapter_title="$chapter_title" \
             --metadata htmlfile="$basename.html" \
             --template templates/website/metadata.template.json \
-            --to html -o "_temp/$basename.metadata.json"
+            --to html \
+            --output "_temp/$basename.metadata.json"
     done;                  
 }
 
@@ -188,13 +177,13 @@ build_index() {
     # consolidates the metadata into a single json file
     echo "Grouping metadata by category..."  # (yep, this #is a right mess)
     echo "{\"categories\": [" > _temp/index.json
-    SEPARATOR_OUTER=""  # no comma before first list element (categories)
-    SEPARATOR_INNER=""  # ditto (recipes per category)
-    IFS=$'\n'           # tell for loop logic to split on #newlines only, not spaces
-    CATS="$(cat _temp/*.category.txt)"
+    local SEPARATOR_OUTER=""  # no comma before first list element (categories)
+    local SEPARATOR_INNER=""  # ditto (recipes per category)
+    local IFS=$'\n'           # tell for loop logic to split on #newlines only, not spaces
+    local CATS="$(cat _temp/*.category.txt)"
     for CATEGORY in $(echo "$CATS" | cut -d" " -f2- | sort | uniq); do
         printf '%s' "$SEPARATOR_OUTER" >> _temp/index.json
-        CATEGORY_FAUX_URLENCODED="$(echo "$CATEGORY" | awk -f "templates/website/faux_urlencode.awk")"
+        local CATEGORY_FAUX_URLENCODED="$(echo "$CATEGORY" | awk -f "templates/website/faux_urlencode.awk")"
 
         # some explanation on the next line and similar ones: this uses `tee -a`
         # instead of `>>` to append to two files instead of one, but since we don't
@@ -210,15 +199,15 @@ build_index() {
             fi
         done
         printf "]}\n" | tee -a "_temp/index.json" "_temp/$CATEGORY_FAUX_URLENCODED.category.json" > /dev/null
-        SEPARATOR_OUTER=","
-        SEPARATOR_INNER=""
+        local SEPARATOR_OUTER=","
+        local SEPARATOR_INNER=""
     done
     unset IFS
     echo "]}" >> _temp/index.json
 }
 
 html() {
-    TIME_START=$(date +%s)
+    local TIME_START=$(date +%s)
     touch _temp/empty.txt
     copy_assets
     extract_metadata
@@ -227,26 +216,26 @@ html() {
     echo "Building chapter pages..."
     for FILE in text/*.md;do
         echo "⚙️ Processing $FILE..."
-        CATEGORY_FAUX_URLENCODED="$(cat "_temp/$(basename "$FILE" .md).category.txt" | cut -d" " -f2- | awk -f "templates/website/faux_urlencode.awk")"
+        local CATEGORY_FAUX_URLENCODED="$(cat "_temp/$(basename "$FILE" .md).category.txt" | cut -d" " -f2- | awk -f "templates/website/faux_urlencode.awk")"
         # when running under GitHub Actions, all file modification dates are set to
         # the date of the checkout (i.e., the date on which the workflow was
         # executed), so in that case, use the most recent commit date of each file
         # as its update date – you'll probably also want to set the TZ environment
         # variable to your local timezone in the workflow file (#21)
         if [[ "$GITHUB_ACTIONS" = true ]]; then
-            UPDATED_AT="$(git log -1 --date=short-local --pretty='format:%cd' "$FILE")"
+            local UPDATED_AT="$(git log -1 --date=short-local --pretty='format:%cd' "$FILE")"
         else
-            UPDATED_AT="$(date -r "$FILE" "+%Y-%m-%d")"
+            local UPDATED_AT="$(date -r "$FILE" "+%Y-%m-%d")"
         fi
         
-        basename="$(basename "$FILE" .md)"
+        local basename="$(basename "$FILE" .md)"
         $pandoc_command "$FILE" \
             --metadata siteurl=$siteurl \
             --metadata category_faux_urlencoded="$CATEGORY_FAUX_URLENCODED" \
             --metadata updatedtime="$UPDATED_AT" \
             --metadata htmlfile="$basename.html" \
             --defaults settings/html.yml \
-            -o "$output_directory/$basename.html"
+            --output "$output_directory/$basename.html"
             
     done
    
@@ -257,11 +246,12 @@ html() {
         --metadata-file settings/config.yml \
         --template templates/website/home.html \
         --metadata updatedtime="$(date "+%Y-%m-%d")" \
-        -s -o $output_directory/index.html
+        --standalone \
+        --output $output_directory/index.html
 
     echo "Assembling search index..."
     echo "[" > _temp/search.json
-    SEPARATOR=""
+    local SEPARATOR=""
     for FILE in _temp/*.metadata.json; do
         printf '%s' "$SEPARATOR" >> _temp/search.json
         cat "$FILE" >> _temp/search.json
@@ -270,8 +260,8 @@ html() {
     echo "]" >> _temp/search.json
     cp -r _temp/search.json $output_directory
 
-    TIME_END=$(date +%s)
-    TIME_TOTAL=$((TIME_END-TIME_START))
+    local TIME_END=$(date +%s)
+    local TIME_TOTAL=$((TIME_END-TIME_START))
     echo "🚀 All done after $TIME_TOTAL seconds!"
 }
 
@@ -282,27 +272,26 @@ reset() {
 }
 
 server() {
-    # runs a local server for development purposes
+    # runs a local development server for testing
     # requires Python 3.x installed on the machine
     html;
     python3 -m http.server --directory $output_directory;
 }
 
-textbook() {
+all_formats() {
     markdown
     epub
-    html
-    pdf
-    latex
     docx
     oai
+    pdf_context # change to pdf_latex if using LaTeX
+    html
 }
 
 # If no arguments are specified in the $ sh lantern.sh command,
 # then run the textbook function (which builds all formats)
 if [ -z "$1" ]
 then
-    textbook
+    all_formats
 fi
 
 "$@"

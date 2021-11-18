@@ -53,8 +53,8 @@ epub-subdirectory: EPUB
 epub-chapter-level: 1
 
 css: 
-  - lib/styles/html.css
-  - lib/styles/custom.css
+  - lib/css/html.css
+  - lib/css/custom.css
 
 # this is also called in lantern.sh, not sure where to put these settings
 #resource-path:
