@@ -173,6 +173,18 @@ extract_metadata() {
     done;                  
 }
 
+build_chapter_index() {
+    echo "Building the chapter index..."
+    echo "{\"chapters\": [" > _temp/chapters.json
+    local SEPARATOR=""
+    for FILE in _temp/*.metadata.json; do
+        printf '%s' "$SEPARATOR" >> _temp/chapters.json
+        cat "$FILE" >> _temp/chapters.json
+        SEPARATOR=","
+    done
+    echo "]}" >> _temp/chapters.json
+}
+
 build_index() {
     # consolidates the metadata into a single json file
     echo "Grouping metadata by category..."  # (yep, this #is a right mess)
@@ -211,6 +223,7 @@ html() {
     touch _temp/empty.txt
     copy_assets
     extract_metadata
+    build_chapter_index
     build_index
     
     echo "Building chapter pages..."
@@ -242,7 +255,7 @@ html() {
    
     echo "Building the home page..."
     $pandoc_command _temp/empty.txt \
-        --metadata-file _temp/index.json \
+        --metadata-file _temp/chapters.json \
         --metadata-file metadata.yml \
         --metadata-file settings/config.yml \
         --template templates/website/home.html \
