@@ -243,7 +243,7 @@ html() {
         
         local basename="$(basename "$FILE" .md)"
         $pandoc_command "$FILE" \
-            --metadata-file _temp/index.json \
+            --metadata-file _temp/chapters.json \
             --metadata siteurl=$siteurl \
             --metadata category_faux_urlencoded="$CATEGORY_FAUX_URLENCODED" \
             --metadata updatedtime="$UPDATED_AT" \

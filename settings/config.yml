@@ -10,18 +10,16 @@ link-citations: true
 
 cover: true
 
-format: # full-text download options
-  - label: Online
-    link: textbook.html
+download: # full-text download options
   - label: PDF
-    link: textbook.pdf
+    link: Clipperton_EMPS.pdf
   - label: EPUB
-    link: textbook.epub
+    link: Clipperton_EMPS.epub
   - label: DOCX
-    link: textbook.docx
-  - label: LATEX
-    link: textbook.tex
-  - label: GitHub
+    link: Clipperton_EMPS.docx
+  - label: Markdown
+    link: Clipperton_EMPS.md
+  - label: Source
     link: https://github.com/nulib-oer/lantern
 
 # print settings

@@ -90,11 +90,6 @@
 
     <main class="container">
 
-        <article>
-            $description$
-        </article>
-
-
         <!-- not yet working :(
         <aside class="search">
             <input type="text" placeholder="Search..." id="search_input" disabled>
@@ -103,58 +98,67 @@
         </aside>
         -->
         <article>
+            $if(description)$
             <header>
                 <aside>
-                    <h2>Table of Contents</h3>
-                    <nav>
+                    <h2>Description</h3>
+                    $description$
+                </aside>
+
+
+                $if(download)$
+                <details open>
+                    <summary>Download</summary>
+                    $for(download)$<a href="$it.link$" role="button" class="secondary">$it.label$</a>$endfor$
+                </details>
+                $endif$
+            </header>
+            $endif$
+            
+            <hgroup>
+                <h2>$toc-title$</h2>
+            </hgroup>
+
+            <aside>
+                <nav>
                     <ul>${for(chapters)}
                         <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>${endfor}
                     </ul>
-                    </nav>
-                </aside>
-            </header>
-            <details open>
-                <summary><strong>More Information</strong></summary>
-                <dl>
-                    $if(subjects)$
-                    <dt>Subjects</dt>
-                    <dd>$for(subjects)$$subjects$$sep$, $endfor$</dd>
-                    $endif$
-                    <dt>Copyright</dt>
-                    <dd><a href="$copyright.statement-uri$">$publication-year$ &copy; $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$</a></dd>
-                    <dt>License</dt>
-                    <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
-                    <dt>Publisher</dt>
-                    <dd><a href="$publisher.website$">$publisher.name$</a></dd>
-                    $if(contributor)$
-                    <dt>Contributors</dt>
-                    <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
-                    $endif$
-                    <dt>Preferred Attribution</dt>
-                    <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>,
-                        $publication-year$.$endif$
-                    </dd>
-                </dl>
-            </details>
+                </nav>
+            </aside>
+
             <footer>
 
-                <hgroup>
-                    <h2>Get started</h2>
-                </hgroup>
-
-                $for(format)$
-                <a href="$format.link$" role="button" class="contrast outline">$format.label$</a> $endfor$
-
-                <br>
-
-                <div class="credit-line">
-                    <small>Built with <a href="https://nulib-oer.github.io/lantern/">Lantern.</a></small>
-                </div>
+                <details open>
+                    <summary><strong>More Information</strong></summary>
+                    <dl>
+                        $if(subjects)$
+                        <dt>Subjects</dt>
+                        <dd>$for(subjects)$$subjects$$sep$, $endfor$</dd>
+                        $endif$
+                        <dt>Copyright</dt>
+                        <dd><a href="$copyright.statement-uri$">$publication-year$ &copy; $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$</a></dd>
+                        <dt>License</dt>
+                        <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
+                        <dt>Publisher</dt>
+                        <dd><a href="$publisher.website$">$publisher.name$</a></dd>
+                        $if(contributor)$
+                        <dt>Contributors</dt>
+                        <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
+                        $endif$
+                        <dt>Preferred Attribution</dt>
+                        <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>,
+                            $publication-year$.$endif$
+                        </dd>
+                    </dl>
+                </details>
 
             </footer>
         </article>
 
-
+        <div class="credit-line">
+            <small>Built with <a href="https://nulib-oer.github.io/lantern/">Lantern.</a></small>
+        </div>
 
     </main>
 
