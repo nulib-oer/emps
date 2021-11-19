@@ -13,6 +13,9 @@ to: docx
 reference-doc: templates/docx.docx
 standalone: true
 
+filters:
+  - lib/lua/questions.lua
+
 # table of contents
 table-of-contents: true
 toc-depth: 3

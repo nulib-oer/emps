@@ -56,3 +56,11 @@ if FORMAT:match 'context' then
     end
   end
 end
+
+if FORMAT:match 'docx' then
+  function Div(el)
+    if el.classes:includes("question") then
+      return { pandoc.Para { pandoc.Strong { pandoc.Str(el.attributes.text) }}, el }
+    end
+  end
+end
