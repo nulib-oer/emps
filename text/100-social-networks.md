@@ -54,7 +54,7 @@ When the nodes in a network represent people, organizations, or another type of 
 
 ### Network Representations
 
-There are different ways to represent a network. The two most accessible methods are sociograms and adjacency matrices. The sociogram in figure below and the adjacency matrix in Table 11.1 are representations of the same network.
+There are different ways to represent a network. The two most accessible methods are sociograms and adjacency matrices. The sociogram in figure 10.1 and the adjacency matrix in Table 11.1 are representations of the same network.
 
 ![A sociogram for a network with nodes [A, B, C, D, E]. Each circle represents a node and each line represents a relationship between the two nodes it connects](images/social-networks/11-1.png)
 
@@ -67,7 +67,7 @@ There are different ways to represent a network. The two most accessible methods
    $D$   $0$   $1$   $1$   ---   $0$
    $E$   $1$   $0$   $1$   $0$   ---
 
-  : Table 11.1: The adjacency matrix for a network with nodes $[A, B, C, D, E]$. Rows and columns represent nodes; $1$ denotes an edge between two nodes and $0$ denotes absence of edge, with dashes along the diagonal to demonstrate that a node cannot have an edge to itself. In this network, there exist relationships between nodes $A \& B$, $A \& C$, $A \& E$, $B \& D$, $C \& D$, and $C \& E$.
+  : Table 10.1: The adjacency matrix for a network with nodes $[A, B, C, D, E]$. Rows and columns represent nodes; $1$ denotes an edge between two nodes and $0$ denotes absence of edge, with dashes along the diagonal to demonstrate that a node cannot have an edge to itself. In this network, there exist relationships between nodes $A \& B$, $A \& C$, $A \& E$, $B \& D$, $C \& D$, and $C \& E$.
 
 A sociogram is a diagram that displays the nodes as points and the edges as lines or arrows.
 
@@ -89,11 +89,11 @@ The first important attribute of a network is whether there is a direction assoc
 
 **Undirected Networks.** The most basic type is an undirected graph, in which the edges represent *symmetric*, or *reciprocal*, relationships between nodes. The ties in an undirected graph are called **undirected** or **symmetric ties**. Such ties indicate that for any pair of connected nodes, both nodes have the same role in the relationship.
 
-One example of such a graph is the friendship network of students in an elementary school class based on bonds observed by their teacher (see figure above. In this network, an edge between two students means that their teacher perceives them to have a mutual friendship; note that a tie does not indicate any hierarchy among the connected nodes. If, for example, the teacher infers that Inge and Jaylen are friends, then an undirected tie exists between them in the graph. The edge between these two nodes means that to say *Inge is friends with Jaylen* is the same as saying *Jaylen is friends with Inge*.
+One example of such a graph is the friendship network of students in an elementary school class based on bonds observed by their teacher (see figure 10.2. In this network, an edge between two students means that their teacher perceives them to have a mutual friendship; note that a tie does not indicate any hierarchy among the connected nodes. If, for example, the teacher infers that Inge and Jaylen are friends, then an undirected tie exists between them in the graph. The edge between these two nodes means that to say *Inge is friends with Jaylen* is the same as saying *Jaylen is friends with Inge*.
 
 **Directed Networks.** In a directed graph, each tie has a direction: the **directed ties** in a directed graph represent a *one-way* or *asymmetric* relationship between nodes. We can think of asymmetric relationships as those in which the roles of the source and destination nodes differ.
 
-Earlier, we described a network to model mentorship and advising between political scientists (see figure below). For each tie in this network, one node has the role of mentor and the other the role of student; note that each node can take on one role or the other, or even *both* depending on the direction of its ties to other nodes. Let there be eight scholars in the network: Akemi, Brett, Chi, Dani, Elvan, Farah, Gal, and Harvey. Akemi is the most senior scholar and was an adviser to Brett and Chi when they were graduate students. Later in their careers, Brett mentored Dani and Elvan, and Chi mentored Farah, Gal, and Harvey. In this network, the direction of the tie is a fundamental aspect of the relationship between two nodes: to say *Akemi mentors Brett* is not the same as saying *Brett mentors Akemi*.
+Earlier, we described a network to model mentorship and advising between political scientists (see figure 10.3). For each tie in this network, one node has the role of mentor and the other the role of student; note that each node can take on one role or the other, or even *both* depending on the direction of its ties to other nodes. Let there be eight scholars in the network: Akemi, Brett, Chi, Dani, Elvan, Farah, Gal, and Harvey. Akemi is the most senior scholar and was an adviser to Brett and Chi when they were graduate students. Later in their careers, Brett mentored Dani and Elvan, and Chi mentored Farah, Gal, and Harvey. In this network, the direction of the tie is a fundamental aspect of the relationship between two nodes: to say *Akemi mentors Brett* is not the same as saying *Brett mentors Akemi*.
 
 A second example of a directed graph is the network of students in an elementary school class based on friendship ties identified by the students themselves 11.2: if Inge identifies Jaylen as a friend, then there exists a friendship tie from Inge to Jaylen; if Jaylen identifies Inge as a friend, then there exists a friendship tie from Jaylen to Inge. Kiko identifies both Inge and Jaylen as friends, so there exist ties from Kiko to Inge and from Kiko to Jaylen. Inge identifies Kiko as a friend, but Jaylen does not; thus, there exists a tie from Inge to Kiko, but there is no tie from Jaylen to Kiko---despite the tie from Kiko to Jaylen. The ability to denote such asymmetric relationships is the key feature of directed graphs.
 
@@ -137,7 +137,7 @@ Now that we have covered the foundations of graph elements, we can consider some
 
 There are many important concepts related to the traversal of a graph from one specific node to another. To traverse a graph from one node to another, we follow a **path**, a sequence of nodes connected by edges, spanning from an origin node to a destination node without repeating any nodes or edges [@WassermanFaust1994]. For a directed graph, the path follows the direction of each edge. Note that for any pair of nodes in a network, there may exist multiple paths.
 
-The **path length** is the number of edges in a given path between two nodes, and the shortest path between two given nodes is called their **geodesic** [@WassermanFaust1994]. The sociograms below highlight the geodesics between Kiko and Mega for both undirected and directed representations of the student friendship network.
+The **path length** is the number of edges in a given path between two nodes, and the shortest path between two given nodes is called their **geodesic** [@WassermanFaust1994]. The sociograms in figure 10.5 highlight the geodesics between Kiko and Mega for both undirected and directed representations of the student friendship network.
 
 The **distance** between any two nodes, also referred to as the *geodesic distance* is the length of their geodesic. For example, if nodes $A$ and $B$ are connected by an undirected tie, then their geodesic distance is $1$.
 
@@ -149,9 +149,9 @@ The **diameter** of a network is the maximum geodesic distance between any two v
 
 **Subgraphs and Components**
 
-A network in which each node is directly connected to all the other nodes is called a **complete graph** (see figure below; this is a special case of a **geographic network**, which we will describe later.
+A network in which each node is directly connected to all the other nodes is called a **complete graph** (see figure 10.6; this is a special case of a **geographic network**, which we will describe later.
 
-A graph in which each node can reach all other nodes via a path is called a **connected graph** [@WassermanFaust1994]. The graphs shown in the above figures are connected graphs. Note that while not every connected graph is a complete graph, all complete graphs are connected graphs.
+A graph in which each node can reach all other nodes via a path is called a **connected graph** [@WassermanFaust1994]. The graphs shown in figures 10.1, 10.2, 10.3, 10.5, 10.6 are connected graphs. Note that while not every connected graph is a complete graph, all complete graphs are connected graphs.
 
 If we take a subset of the nodes in a graph, including some or all of the edges among the subset of nodes (or, alternately, a subset of edges and all the nodes attached to those edges), the result, called a **subgraph**, is itself a graph [@WassermanFaust1994].
 
@@ -159,7 +159,7 @@ If we take a subset of the nodes in a graph, including some or all of the edges 
 
 If a subgraph is a connected graph---if every node is reachable from every other node---*and* there are no other nodes connected to the subgraph, then the subgraph is called a **connected component**. This means that a subgraph consisting of a single node---an isolate---is considered a connected component. Every graph has at least one connected component.
 
-A **disconnected graph** is one in which at least one node is not reachable via a path from at least one other node [@WassermanFaust1994]. An equivalent definition describes a disconnected network as one in which at least one connected component is not reachable from another. This means that a disconnected graph has at least two connected components. The network shown below is a disconnected graph with three connected components.
+A **disconnected graph** is one in which at least one node is not reachable via a path from at least one other node [@WassermanFaust1994]. An equivalent definition describes a disconnected network as one in which at least one connected component is not reachable from another. This means that a disconnected graph has at least two connected components. The network shown in figure 10.6 is a disconnected graph with three connected components.
 
 ![In the complete graph (left), each node is directly connected to all the other nodes; this graph is also a complete graph. In the connected graph in the center, each node is reachable from all other nodes in the graph. The disconnected graph (right) has three connected components; there is no way to get from some nodes to certain others](images/social-networks/11-6.png)
 
@@ -175,15 +175,15 @@ Note that though these metrics can be computed for all nodes in a graph, they on
 
 ![Betweenness (left) and closeness (right) for the undirected friendship network. Note that Parveen has the highest value for each measure](images/social-networks/11-7.png)
 
-**Closeness centrality.** **Closeness centrality** measures how *close* a node is to others. For a given node in a connected component, closeness centrality is found by computing the reciprocal of the sum of all the distances between the given node and each other node in the component. We can write the definition of closeness for a node $v$ thus: $$Closeness(v) = \frac{1}{\sum_{i \neq v}^{n}d(v, i)}$$ where $d(v, i)$ is the geodesic distance between nodes $v$ and $i$ [@WassermanFaust1994]. The network in figure above displays each node's closeness centrality.
+**Closeness centrality.** **Closeness centrality** measures how *close* a node is to others. For a given node in a connected component, closeness centrality is found by computing the reciprocal of the sum of all the distances between the given node and each other node in the component. We can write the definition of closeness for a node $v$ thus: $$Closeness(v) = \frac{1}{\sum_{i \neq v}^{n}d(v, i)}$$ where $d(v, i)$ is the geodesic distance between nodes $v$ and $i$ [@WassermanFaust1994]. The network in figure 10.7 displays each node's closeness centrality.
 
-**Degree centrality.** A third measure of centrality is **degree centrality**, which considers important nodes to be those that have many neighbors. The **degree** of a vertex tells us its number of neighbors. To calculate the degree of a vertex in an undirected graph, we can simply count the number of edges it has [@WassermanFaust1994]. Let us return to the example of an undirected friendship network among classmates as inferred by the teacher (shown in figure \@ref(fig:fig11-8) with each node's degree labeled); in this network, if Parveen is connected to Inge, Nyasha, Orla, Quinn, and Tracy, then Parveen has a degree of $5$.
+**Degree centrality.** A third measure of centrality is **degree centrality**, which considers important nodes to be those that have many neighbors. The **degree** of a vertex tells us its number of neighbors. To calculate the degree of a vertex in an undirected graph, we can simply count the number of edges it has [@WassermanFaust1994]. Let us return to the example of an undirected friendship network among classmates as inferred by the teacher (shown in figure 10.8 with each node's degree labeled); in this network, if Parveen is connected to Inge, Nyasha, Orla, Quinn, and Tracy, then Parveen has a degree of $5$.
 
-![Degree as measured in undirected (left) and directed (indegree, center; and outdegree, right) networks](images/social-networks/11-8.png){#fig:11-8}
+![Degree as measured in undirected (left) and directed (indegree, center; and outdegree, right) networks](images/social-networks/11-8.png)
 
-For a directed graph, a node's **indegree** is the number of edges terminating there; the **outdegree** is the number of edges originating from the node [@WassermanFaust1994]. As an example, we can consider the directed friendship network as described by the students (shown with indegree and outdegree labeled in figures \@ref(fig:fig11-8) and \@ref(fig:fig11-9), respectively). In this network, the students Inge, Nyasha, Orla, Quinn, and Tracy consider Parveen to be a friend, so Parveen has an indegree of $5$. Parveen, in turn, considers only Inge, Nyasha, and Tracy to be friends and so has an outdegree of $3$.
+For a directed graph, a node's **indegree** is the number of edges terminating there; the **outdegree** is the number of edges originating from the node [@WassermanFaust1994]. As an example, we can consider the directed friendship network as described by the students (shown with indegree and outdegree labeled in figures 10.8 and 10.9, respectively). In this network, the students Inge, Nyasha, Orla, Quinn, and Tracy consider Parveen to be a friend, so Parveen has an indegree of $5$. Parveen, in turn, considers only Inge, Nyasha, and Tracy to be friends and so has an outdegree of $3$.
 
-A network's **degree distribution** describes the probability of a given node in the graph having a degree of a certain value. In practical terms, we can think of it as a set of numbers, where each reflects the count of nodes in the graph with degree of $0$, degree of $1$, degree of $2$, and so on. The degree distribution for the undirected friendship network is displayed in figure \@ref(fig:fig11-9). The concept of degree distribution will be important later when we discuss *power-law networks*.
+A network's **degree distribution** describes the probability of a given node in the graph having a degree of a certain value. In practical terms, we can think of it as a set of numbers, where each reflects the count of nodes in the graph with degree of $0$, degree of $1$, degree of $2$, and so on. The degree distribution for the undirected friendship network is displayed in figure 10.9. The concept of degree distribution will be important later when we discuss *power-law networks*.
 
 The **mean degree** of a graph is the mean average of the degrees for all the vertices in the entire graph [@WassermanFaust1994]. For example, if an undirected network has four nodes with degrees $[1, 1, 2, 2]$, then the mean degree for the network is $1.5$. If a directed graph has five nodes with indegrees $[0, 1, 3, 3, 3]$, and outdegrees $[1, 2, 2, 2, 3]$, then the mean of the indegrees is $2$ and the mean of the outdegrees is also $2$; note that these are equal because every edge extending from some node points to another [@WassermanFaust1994].
 
@@ -191,19 +191,19 @@ The **mean degree** of a graph is the mean average of the degrees for all the ve
 
 In order to evaluate clustering within a network, we must first introduce the notion of a **triple**, sometimes called a **triplet**, which is a connected component with three nodes---that is, it's a triad with at least two edges. If a triple forms a complete graph---that is, if each node is connected to both the others---then it is a **closed triple**, also known as a **triangle**; otherwise, one pair of nodes in the triple are not adjacent so it is an **open triple**. An **ordered triple** is one for which the vertex order is a characteristic of the triple; for example, if the vertices $[A, B, C]$ form a triangle, the ordered triples $ABC$, $ACB$, $BAC$, $BCA$, $CAB$, and $CBA$ are each distinct---but note that the *triangles* formed by each triple are all the same.
 
-![A histogram of the degree distribution for the undirected friendship network shows that there are two nodes with degree $1$, four with degree $2$, and one each with degrees $3$, $4$, or $5$](images/social-networks/11-9.png){#fig:fig11-9}
+![A histogram of the degree distribution for the undirected friendship network shows that there are two nodes with degree $1$, four with degree $2$, and one each with degrees $3$, $4$, or $5$](images/social-networks/11-9.png)
 
 For our purposes, we will assume that all edges are *undirected* when considering triples, triangles, and clustering. Note that in many applications outside the scope of this chapter, this assumption will not hold.
 
 We can now define, for any given node, its **local clustering coefficient** (also called the **local transitivity**) by taking the fraction of the pairs of the node's neighbors that are in turn neighbors with one another---that is, the number of triangles including the node divided by the number of possible triangles [@WattsStrogatz1998; @Opsahl2013]. An equivalent definition given in Saramäki et al. ([@SaramakiEtAl2007]) is to compute the ratio of twice the number of triangles that include the given node to the product of the node's degree and one less than its degree:
 
-$$Transitivity_{local}(v) = \frac{2 \times t_v}{degree(v) \times (degree(v) - 1)}$$ where $t_v$ is the number of triangles that include node $v$. (Note that for nodes with degree of 1, this results in a zero in the denominator, which means that local transitivity is undefined for such nodes. However, for the purposes of computing the average local clustering coefficient, these undefined values can be replaced with $0$.) This metric measures cohesion among a given vertex and its neighbors [@BarratEtAl2004]. The local transitivity for nodes in the undirected friendship network is shown in figure \@ref(fig:fig11-10) (with undefined values replaced with $0$).
+$$Transitivity_{local}(v) = \frac{2 \times t_v}{degree(v) \times (degree(v) - 1)}$$ where $t_v$ is the number of triangles that include node $v$. (Note that for nodes with degree of 1, this results in a zero in the denominator, which means that local transitivity is undefined for such nodes. However, for the purposes of computing the average local clustering coefficient, these undefined values can be replaced with $0$.) This metric measures cohesion among a given vertex and its neighbors [@BarratEtAl2004]. The local transitivity for nodes in the undirected friendship network is shown in figure 10.10 (with undefined values replaced with $0$).
 
-We can compute the average local clustering coefficient for a graph $g$ by taking the mean across all nodes: $$AverageLocalTransitivity(g) = \frac{\sum_{i = 1}^{N}Transitivity_{local}(n_i)}{N}$$ where $n_i$ represents a node identified by its index and $N$ is the number of nodes in the entire network [@BarratEtAl2004]. According to @BarratEtAl2004, this measure "expresses the statistical level of cohesiveness measuring the global density of interconnected vertex triples in the network" ([@BarratEtAl2004 p.3750]).
+We can compute the average local clustering coefficient for a graph $g$ by taking the mean across all nodes: $$AverageLocalTransitivity(g) = \frac{\sum_{i = 1}^{N}Transitivity_{local}(n_i)}{N}$$ where $n_i$ represents a node identified by its index and $N$ is the number of nodes in the entire network [@BarratEtAl2004]. According to @BarratEtAl2004, this measure "expresses the statistical level of cohesiveness measuring the global density of interconnected vertex triples in the network" [@BarratEtAl2004 p.3750].
 
 Finally, to calculate the **global clustering coefficient**, also called the **global transitivity**, for a graph $g$, we take the ratio of thrice the number of triangles to the number of all ordered triples---both closed and open---in the graph: $$Transitivity_{global}(g) = \frac{3 \times Triangles(g)}{Triples_{ordered}(g)}$$ where $Triangles(g)$ is the total number of triangles in graph $g$ and $Triples_{ordered}(g)$ is the total number of ordered triples in $g$ [@Opsahl2013].
 
-![Local transitivity for the undirected friendship network (with global transitivity = $0.3913$ and average local transitivity = $0.5407$)](images/social-networks/11-10.png){#fig:fig11-10}
+![Local transitivity for the undirected friendship network (with global transitivity = $0.3913$ and average local transitivity = $0.5407$)](images/social-networks/11-10.png)
 
 **Density**
 
@@ -213,13 +213,13 @@ The **density** of a network is the ratio of the number of edges it contains to 
 
 **Geographic Networks**
 
-A **geographic network** is one in which each node is connected to the *k* nearest nodes, with *k* ranging from $1$ to the total number of nodes in the network minus $1$. If *k* takes on the maximum value---that is, if each node is connected to all the other nodes---then the network is called a **complete graph**. figure \@ref(fig:fig11-11) shows a geographic network with $k = 4$.
+A **geographic network** is one in which each node is connected to the *k* nearest nodes, with *k* ranging from $1$ to the total number of nodes in the network minus $1$. If *k* takes on the maximum value---that is, if each node is connected to all the other nodes---then the network is called a **complete graph**. figure 10.11 shows a geographic network with $k = 4$.
 
-![A geographic network with $k = 4$. Each node is connected to its four closest neighbors](images/social-networks/11-11.png){#fig:fig11-11}
+![A geographic network with $k = 4$. Each node is connected to its four closest neighbors](images/social-networks/11-11.png)
 
 **Random Networks**
 
-A **random network** is one in which, for each pair of nodes, there is a probability $p$ that there is an edge between them. This probability is a constant for the entire graph and can range from $0$ to $1$. The sociogram in figure \@ref(fig:fig11-12) shows a random graph of $15$ nodes and probability $p = 0.2$.
+A **random network** is one in which, for each pair of nodes, there is a probability $p$ that there is an edge between them. This probability is a constant for the entire graph and can range from $0$ to $1$. The sociogram in figure 10.12 shows a random graph of $15$ nodes and probability $p = 0.2$.
 
 **Small-World Networks**
 
@@ -229,11 +229,11 @@ These experiments show that the small-world hypothesis appears to be consistent 
 
 Small-world networks exhibit two key characteristics: (1) the mean local clustering coefficient is high---that is, on average, a node's neighbors are highly connected to each other [@WattsStrogatz1998]; and (2) the mean geodesic distance is low---that is, on average, the distance between nodes is short[@WattsStrogatz1998]. Given high average clustering, we might expect such networks to be dense, but in fact, they tend to have relatively few edges [@TakesKosters2011]. Because they have a small mean path length, the diameter---the largest geodesic distance between any two nodes---is "exponentially smaller than the size of the network" [@Kleinberg2000 p.845].
 
-![A random network with N = 15 and p = 0:2](images/social-networks/11-12.png){#fig:fig11-12}
+![A random network with N = 15 and p = 0:2](images/social-networks/11-12.png)
 
 The combination of these features results in a network through which information, preferences, and other conditions (such as infectious disease) can diffuse quickly [@WattsStrogatz1998].
 
-Figure \@ref(fig:fig11-13) shows two representations of the same small-world network, one with a diameter of $4$, mean degree centrality of $3.1$ and a global clustering coefficient of $0.155$.
+Figure 10.13 shows two representations of the same small-world network, one with a diameter of $4$, mean degree centrality of $3.1$ and a global clustering coefficient of $0.155$.
 
 **Power-Law Networks**
 
@@ -243,7 +243,7 @@ A *power-law function* is a relationship between two variables, $x$ and $y$, of 
 
 Scientific studies across a variety of disciplines have indicated that power-law networks abound; Newman, for instance, comments on the "ubiquity of power-law behaviour in the natural world" [@Newman2005]. In new research, however, Broido and Clauset challenge the general belief that power-law networks are as widespread as many have claimed, finding specifically that "social networks are at best weakly scale free, and although a power-law distribution can be a statistically plausible model for these networks, it is often not a better model than a non-scale-free distribution" ([@BroidoClauset2019]).
 
-![Sociograms of a single small-world network with N = 17 nodes. This graph has a diameter of 4, mean degree centrality of 3:1 and a global clustering coefficient of 0:155](images/social-networks/11-13.png){#fig:fig11-13}
+![Sociograms of a single small-world network with N = 17 nodes. This graph has a diameter of 4, mean degree centrality of 3:1 and a global clustering coefficient of 0:155](images/social-networks/11-13.png)
 
 ## Applications of Social Network Analysis
 
@@ -255,7 +255,7 @@ Here we describe in detail two studies of social networks in the domain of polit
 
 The authors implement a machine learning algorithm for an introduction to machine learning methods) to label a set of Twitter users (the *egos*) by their political leaning based on the content of their politically oriented tweets. Using the same classification method, they identify the egos' neighbors based on outgoing ties---the users whom the ego *follows* on Twitter (the *alters*)---as either Democrats or Republicans (with alters found to be non-political excluded). The result is a directed *ego network* around each ego, with alters labeled according to their own political leaning.
 
-![A sociogram and histogram of the corresponding degree distribution for a power-law network](images/social-networks/11-14.png){#fig:fig11-14}
+![A sociogram and histogram of the corresponding degree distribution for a power-law network](images/social-networks/11-14.png)
 
 Next, the researchers calculate each ego's homophily thus: "the homophily rate is defined as the number of outbound ties directed to alters who share political orientation, divided by the overall number of outbound ties (i.e., directed to alters with similar political orientation plus directed to alters with different political orientation)" [@ColleoniEtAl2014 p.324]. We can write their equation for homophily as: $$homophily(ego_i) = \frac{alters_{i.s}}{alters_{i.t}}$$ where $alters_{i.s}$ is, for ego $i$, the number of alters with the same political orientation and $alters_{i.t}$ is the total number of politically oriented alters. Higher values of homophily (that is, greater than $0.5$) mean that a given ego is connected to a greater proportion of alters who share the ego's political orientation compared to the proportion of alters with the other orientation.
 
@@ -307,7 +307,7 @@ Social networks exist nearly everywhere that social entities exist. We can analy
 
 Technological innovations, in particular, have broadened the means by which we generate and manage social network data: in addition to traditional methods, we can now collect or access data with online surveys; from repositories containing datasets automatically produced by computational routines; as well as by combing through administrative, cultural, genealogical, historical, and other records stored in digital archives. Through these avenues, diverse datasets of increasing sizes are becoming more readily available to a larger audience of researchers. Political scientists and other scholars in the social sciences can ask an expanding range of research questions about social networks, and study these networks with an evolving body of methods.
 
-![Sociograms for Questions 2 (left) and 3 (right)](images/social-networks/11-15.png){#fig:fig11-15}
+![Sociograms for Questions 2 (left) and 3 (right)](images/social-networks/11-15.png)
 
 Social network analysis has the potential to refine our interpretations of social relations and processes in the domain of political science. We can use it to confirm or challenge hypotheses; we can sharpen or complicate how we understand actors and relationships. By synthesizing established or contentious knowledge with new insight, we can develop political theory, thought, and practice---as well as advance political and social agendas.
 
@@ -315,7 +315,7 @@ Social network analysis has the potential to refine our interpretations of socia
 
 1.  Which of the networks listed in [section 11.2.1] are examples of social networks?
 
-2.  Using the graph in figure \@ref(fig:fig11-15), compute the following:
+2.  Using the graph in figure 10.15, compute the following:
 
     1.  The betweenness centrality for Akemi and for Dani
 
@@ -325,7 +325,7 @@ Social network analysis has the potential to refine our interpretations of socia
 
     4.  The network's density
 
-3.  Consider the graph in figure \@ref(fig:fig11-15):
+3.  Consider the graph in figure 10.15:
 
     1.  Is this an undirected or directed graph? How can you tell?
 
@@ -443,7 +443,7 @@ Social network analysis has the potential to refine our interpretations of socia
 
 1.  The following are examples of social networks: The genealogical history of the Japanese royal family; email correspondence between workers in a corporation; mentorship and advising among political scientists in academia; and advice-seeking relationships among all current federal circuit judges in the United States
 
-2.  Using the graph in figure \@ref(fig:fig11-5), we find the following:
+2.  Using the graph in figure 10.5, we find the following:
 
     1.  Betweenness centrality:
 
@@ -471,7 +471,7 @@ Social network analysis has the potential to refine our interpretations of socia
 
     4.  Network density: $0.5$
 
-3.  Considering the graph in figure \@ref(fig:fig11-15):
+3.  Considering the graph in figure 10.15:
 
     1.  This is an undirected network. The edges do not have arrows to indicate asymmetric relationships, so they must be undirected.
 
@@ -481,8 +481,8 @@ Social network analysis has the potential to refine our interpretations of socia
 
     4.  The maximum degree is $4$ and nodes $4$, $9$, $10$, and $14$ have a degree of $4$.
 
-    5.  See figure \@ref(fig:11-16) for the highlighted path. The geodesic, or shortest path, between nodes $1$ and $7$ is $[1, 2, 3, 7]$ and has a path length of $3$. This metric is called the *geodesic distance* or simply the *distance*.
+    5.  See figure 10.16 for the highlighted path. The geodesic, or shortest path, between nodes $1$ and $7$ is $[1, 2, 3, 7]$ and has a path length of $3$. This metric is called the *geodesic distance* or simply the *distance*.
 
     6.  This network is most likely to be a small-world network because it has a large proportion of nodes with average degree centrality, and smaller proportions of nodes with low or high degree centrality. Furthermore: It can't be a geographic network because degree centrality varies by node. It is not likely to be a power-law network because it has several nodes of the maximum degree (also, it's unlikely that a graph with only sixteen nodes could follow a power-law distribution). It is not likely to be a random network with $p = .7$ because that would imply that approximately $70\%$ of pairs of nodes would be connected, which would, in turn, imply an average degree centrality of $p \times N = .7 \times 16 = 10.5$; we know, however, that the mean degree is much lower than that as the maximum degree is $4$.
     
-![Highlighted geodesic between 1 and 7](images/social-networks/11-16.png){#fig:fig11-16}
+![Highlighted geodesic between 1 and 7](images/social-networks/11-16.png)
