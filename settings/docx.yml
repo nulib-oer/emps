@@ -15,7 +15,6 @@ standalone: true
 
 filters:
   - lib/lua/questions.lua
-  - lib/lua/question-attr.lua
 
 # table of contents
 table-of-contents: true
