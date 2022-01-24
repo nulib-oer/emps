@@ -22,7 +22,7 @@ Try plugging them into the above equation and seeing whether you get the result 
 
 *Calculating the p-value*
 
-Note: this calculation presumes that you have understood the discussion about hypothesis testing earlier on in this book. If you are unsure, take a few minutes to refresh your memory on the contents of [ch05](./hypothesis-testing.html).
+Note: this calculation presumes that you have understood the discussion about hypothesis testing earlier on in this book. If you are unsure, take a few minutes to refresh your memory on the contents of the chapter on _Hypothesis Testing_.
 
 Our regression result suggests that $b=11.6$. However, this is an *estimate*, and therefore there is some uncertainty around this number, which is expressed in the standard error. Table 8.1 (and 2) tells us this error is $0.62$. Next, we need a decision rule: how unlikely do we think the p-value can be before we think this result is implausible? Let's set it as $\alpha=0.05$: if the probability of getting this particular $b$ is less than $5\%$ (assuming a world where the null hypothesis is true) we will reject the null hypothesis.
 

@@ -20,7 +20,7 @@ It took nearly 100 years for political science to attempt its first recorded exp
 
 But Gosnell's work was not immediately appreciated by political scientists, and it took nearly another 60 years before serious experimental work began to be taken seriously in the discipline. Shanto Iyengar, Mark Peters, and Donald Kinder invited participants to watch television news programs at the University of North Carolina, Chapel Hill [@iyengar_experimental_1982]. What the participants did not know, however, is that they were randomly assigned to watch some newscasts that had been edited to emphasize certain stories over others. These manipulations resulted in the control group assessing the president's performance differently, based on the issues they were exposed to in the television news program.
 
-And from that point, experiments began steadily becoming a mainstay research method in political science. The figure below shows the number of experiments published every year in the *American Political Science Review*, one of the top publications in political science. As the figure shows, following Iyengar, Peters, and Kinder's work in the 1980s, experiments started to be published in this journal at an increasing rate. However, it is important to keep in mind that experiments are not even close to being the dominant research method. If you have already read [ch06](./surveys.html), then you already know a good deal about the most dominant quantitative research method: surveys.
+And from that point, experiments began steadily becoming a mainstay research method in political science. The figure below shows the number of experiments published every year in the *American Political Science Review*, one of the top publications in political science. As the figure shows, following Iyengar, Peters, and Kinder's work in the 1980s, experiments started to be published in this journal at an increasing rate. However, it is important to keep in mind that experiments are not even close to being the dominant research method. If you have already read in the chapter on _surveys_, then you already know a good deal about the most dominant quantitative research method: surveys.
 
 ![totals are aggregated per decade](images/trend.png){#fig:trend}
 
@@ -28,11 +28,15 @@ And from that point, experiments began steadily becoming a mainstay research met
 
 Experiments, or RCTs (randomized control trials) as they are often called, involve the randomized assignment of individuals into one of two groups (in the most basic design): a **treatment group** that receives some intervention; and a **control group** that does not. This design allows the researcher to determine the effect of some intervention (e.g., individualized tutoring) by comparing the value of some outcome (e.g., test scores) in the treatment group to the control group that did not receive the intervention. Do note, however, that most experiments have several treatment groups and some even have several control groups depending on to what they need to make their comparison.
 
-It is important to differentiate the random assignment necessary to conduct an experiment from the random sampling you learned about in [ch06](./surveys.html). In that chapter, it was explained that random sampling is when you randomly select individuals from some population you are interested in studying to be a part of your survey. But random assignment has nothing to do with that sampling technique. Rather, random assignment means taking your sample, however it was collected, and randomly assigning them to your treatment group(s) or control group(s). This random assignment is necessary to ensure that the treatment and control groups have nearly the same odds of being comparable to each other in terms of demographic characteristics of your overall sample. So, if you have 50 African Americans in your sample of 250 people, and you have four treatment groups and one control group, then random assignment should result in groups of near 50 people each, with 10 African Americans per group.
+It is important to differentiate the random assignment necessary to conduct an experiment from the random sampling you learned about in the chapter on _surveys_. In that chapter, it was explained that random sampling is when you randomly select individuals from some population you are interested in studying to be a part of your survey. But random assignment has nothing to do with that sampling technique. Rather, random assignment means taking your sample, however it was collected, and randomly assigning them to your treatment group(s) or control group(s). This random assignment is necessary to ensure that the treatment and control groups have nearly the same odds of being comparable to each other in terms of demographic characteristics of your overall sample. So, if you have 50 African Americans in your sample of 250 people, and you have four treatment groups and one control group, then random assignment should result in groups of near 50 people each, with 10 African Americans per group.
 
-A consequence of this requirement that the sample be randomly assigned to experimental groups means that how the sample was collected is less important. This, again, is a deviation from what you learned about surveys in [ch06](./surveys.html), where sampling mattered a great deal. But a good experiment can rely on what is called a **convenience sample**, or a sample that is made up of easy to reach people. For instance, for much of the 20th century, researchers often placed newspaper advertisements to construct their samples. Nowadays, however, there are entire online services built around getting researchers participants for their experiments. But these convenience samples do not undermine the legitimacy of the experiment, unless the researchers are trying to generalize to a certain population. If you had a convenience sample of your friends and family, you would be hard pressed to say that any results from an experiment on that sample could generalize to the population of a country.
+A consequence of this requirement that the sample be randomly assigned to experimental groups means that how the sample was collected is less important. This, again, is a deviation from what you learned about surveys earlier in this book, where sampling mattered a great deal. But a good experiment can rely on what is called a **convenience sample**, or a sample that is made up of easy to reach people. For instance, for much of the 20th century, researchers often placed newspaper advertisements to construct their samples. Nowadays, however, there are entire online services built around getting researchers participants for their experiments. But these convenience samples do not undermine the legitimacy of the experiment, unless the researchers are trying to generalize to a certain population. If you had a convenience sample of your friends and family, you would be hard pressed to say that any results from an experiment on that sample could generalize to the population of a country.
+
+::: box :::
 
 **Check-in Question 1:** Is \"random assignment\" another way of saying \"random sampling\" and vice versa? If not, how are they distinct from one another?
+
+:::
 
 ## Method: detail (types of experiments)
 
@@ -40,7 +44,7 @@ As you can probably gather from the few examples provided so far, there are many
 
 ### Surveys vs Survey Experiments
 
-The growth of online survey platforms, such as Survey Monkey and Qualtrics, have resulted in a similar growth in the use of survey experiments. While you might already be familiar with surveys thanks to [ch06](./surveys.html), it is important to differentiate survey experiments. That is, **survey experiments** are experiments that are embedded in surveys. Within such a survey, participants answer questions and read materials just as they would in any survey. But at some point, respondents are randomly assigned to a treatment or control group.
+The growth of online survey platforms, such as Survey Monkey and Qualtrics, have resulted in a similar growth in the use of survey experiments. While you might already be familiar with surveys, it is important to differentiate survey experiments. That is, **survey experiments** are experiments that are embedded in surveys. Within such a survey, participants answer questions and read materials just as they would in any survey. But at some point, respondents are randomly assigned to a treatment or control group.
 
 What is advantageous about experiments embedded in a survey like this is that it is extremely easy to do. Because the surveys are often disseminated online, that means the researcher does not need a physical space where the experiment will be administered. Further, survey respondents are quite easy to obtain while providing modest compensation. Survey firms like YouGov provide samples to respond to researcher-provided surveys for a few dollars a respondent; the samples can even be constructed in ways that resemble national representativeness without true random sampling. For the more-frugal researchers, survey experiments can be administered on Amazon's Mechanical Turk (MTurk) service, which people perform various tasks online for monetary compensation; these are usually menial tasks like testing website functions. But, in recent years, political scientists have been using MTurk to disseminate their survey experiments, as the service is far more affordable than a professional survey firm.
 
@@ -62,7 +66,11 @@ Again, it is worth noting that some questions are answerable in a lab setting. F
 
 Participants were brought to the lab and instructed after a brief interview to allocate \$100 between the two candidates running for President, Obama and Romney. What they did not tell the participants (aside from the money not actually being donated) was that some were randomly assigned to a cue that told them that for every \$10 they gave to the Romney campaign, the participant would receive \$1 for themselves, paid in cash. This meant that participants in this condition, if they gave all \$100 to Romney, thus undermining their likely Democratic Party loyalty, they would receive \$10. But what made this lab experiment unique was the inclusion of another treatment group, identical to the economic incentive condition, that stipulated that their donation amounts would be made public in the university's student newspaper, thus revealing their behavior to their peers; this is the type of social interaction that is often impractical to replicate in a survey setting. Ultimately, those in the control group donated an average of \$90 to Obama, while those in the economic incentive condition's average was \$68, and those with the additional stipulation had an average of \$86. In short, because of the lab setting, the researchers could leverage the presence of a Black institution in the minds of young African Americans to potentially dissuade them from giving into their economic self-interest.
 
+::: box :::
+
 **Check-in Question 2:** What is the primary disadvantage of conducting a lab experiment, compared to a survey experiment?
+
+:::
 
 ## Field Experiments
 
@@ -82,7 +90,11 @@ Consider, for example, Maimonides' Rule and its effects on educational outcomes.
 
 But, let us consider the potential issues with this research design. First, we need to ask ourselves, was the assignment treatment truly random? In this case, treatment was receiving the extra teacher while only gaining a small increase in the total number of students. What would happen if certain parents were able to take advantage of Maimonides' Rule and bend the rules of their public school to get their child into these classrooms with a better student-teacher ratio? Randomization would be broken because students being assigned to the treatment group would likely be from families from better socioeconomic backgrounds (i.e., parents capable of moving their children to advantageous classes are more than likely well to do, financially). This means that the natural experiment was not really an experiment at all and that the researchers were finding a **spurious relationship**, or a relationship between treatment and outcome that was better explained by some confounding factor. Indeed, the same researchers went back to replicate their research and found that recent research that tried to replicate the original study have found artifacts of such manipulation of an otherwise clever natural experiment, leading to null effects once accounted for [@angrist_maimonides_2017].
 
+::: box :::
+
 **Check-in Question 3:** What steps must be taken to conduct a natural experiment?
+
+:::
 
 ## Advantages of Method
 
@@ -106,7 +118,11 @@ Few of the activities asked of experiment participants are realistic in any sens
 
 > **Note:** \* denotes a \"maybe,\" as assessing these types of validity for natural experiments depends on a case-by-case basis.
 
+:::
+
 **Check-in Question 4:** What is the difference between external and internal validity?
+
+:::
 
 ## Broader significance/use in political science
 

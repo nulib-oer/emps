@@ -1,5 +1,27 @@
 ---
 category: 9
+key-terms:
+-   covert observation
+-   deviant case
+-   diverse cases
+-   ethnography
+-   extreme case
+-   focus groups
+-   influential cases
+-   interview
+-   key informant
+-   most different
+-   most similar
+-   hoop test
+-   overt observation
+-   participant observation
+-   process tracing
+-   overt observation
+-   representative Sample
+-   snowball sampling
+-   smoking gun test
+-   straw wind test
+-   typical case
 ---
 
 # Small N
@@ -48,13 +70,21 @@ Second, **diverse cases** highlight range of possible values. A researcher can c
 
 Lastly, **influential cases** are outliers in a sense that they are not typical and may be playing an outsize role in a researcher's results. It is unlikely that small n methods will play a significant role as influential cases rely on large n methods.
 
+::: box :::
+
 **Check-in Question 1:** How should a researcher go about choosing a case selection procedure?
+
+:::
 
 ## Method: setup/overview
 
 Small n methods are characterized by an emphasis on detail. A researcher has to be able to see the environment that they are studying. The purpose of small n methods is to gain an in depth knowledge of particular cases. Field notes will be a researcher's best friend. A researcher should take notes on the demographics, noises, emotions, mores, and much more to gain an accurate understanding of the population they are studying. Additionally, small n methods are about building rapport with the population being studied and constantly taking into account one's own biases and thoughts as they conduct fieldwork. It is not uncommon for researchers to eventually live in the places they are studying. During her work on the black middle class, Mary Pattillo would eventually move into the South Side Chicago neighborhood of Groveland. The neighborhood was the subject of her book *Black Picket Fences* [@pattillo2013a]. Pattillo would attend community meetings, shop, and cultivate lasting relationships with the community, which would guide her research. There is a level of intimacy needed to do good small n research. Not always to the extent of needing to live with one's participants, but still a need for insight that goes beyond a shallow understanding of a particular community. Small n qualitative researcher gets at these insights through several methods.
 
+::: box :::
+
 **Note:** Take sometime to think about for your own research what you are noticing during your fieldwork? How is this informing your study?
+
+:::
 
 ## Method: types
 
@@ -76,7 +106,11 @@ Moving on to recruitment, Robert Weiss' *Learning From Strangers* lists several 
 
 Lastly, when the day to interview finally arrives a researcher should have two recorders, tissue, interview guide, consent form, and a gift card for the participant if possible. The interview should not take any longer than an hour as a sign of respect for the time of your participant. A researcher should take meticulous notes during the interview. Also, the researcher must gain the permission of the participant to conduct a follow up interview if necessary.
 
+::: box :::
+
 **Check-in Question 2:** What is this difference between a representative sample and a key informant?
+
+:::
 
 ### Participant Observation
 
@@ -84,7 +118,11 @@ Lastly, when the day to interview finally arrives a researcher should have two r
 
 The key purpose of participant observations is to provide deeper insight into process and how things function. This exercise is good for 'theory building,' but it may be best to include another method, such as interviewing, to allow for the community to tell their story as well, a supplemental method Pattillo uses as well. What is most important when using participant observation (in qualitative methods in general) is to take meticulous field notes with attention to accuracy. A researcher should be cognizant of their own biases and constantly thinking through their analysis to make sure they a capturing an accurate story. In order to tell an accurate story a researcher should keep both mental notes and a notepad. After the end of an event it is important to write everything down while the researcher's memory is fresh.
 
+:::
+
 **Check-in Question 3:** What are the advantages and disadvantage of covert and over participant observation?
+
+:::
 
 ### Focus Groups
 
@@ -108,7 +146,11 @@ In his text *Wounded City: Violent Turf Wars in a Chicago Barrio*, Robert Vargas
 
 Ethnography is about relationship building and allows for latent findings that may give proper context for understanding particular groups. This is especially important for underrepresented communities, where in depth research is often lacking and responsiveness to a survey may not be likely under less personal circumstances. Ethnography allows a researcher to take a more holistic approach in understanding a community.
 
+::: box :::
+
 **Check-in Question 4:** What should a researcher be looking for when taking ethnographic field notes?
+
+:::
 
 ## Applications
 
@@ -146,48 +188,3 @@ Rapport can be built through appearance including dress, race, gender, regional,
 :::
 
 
-## Key Terms
-
-*NOTE: this is an incomplete list and it needs expanded!!!!!*
-
--   covert observation
-
--   deviant case
-
--   diverse cases
-
--   ethnography
-
--   extreme case
-
--   focus groups
-
--   influential cases
-
--   interview
-
--   key informant
-
--   most different
-
--   most similar
-
--   hoop test
-
--   overt observation
-
--   participant observation
-
--   process tracing
-
--   overt observation
-
--   representative Sample
-
--   snowball sampling
-
--   smoking gun test
-
--   straw wind test
-
--   typical case
