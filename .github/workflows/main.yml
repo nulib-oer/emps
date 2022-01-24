@@ -1,0 +1,38 @@
+name: Publish Open Textbook
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+    paths-ignore:
+      - 'manuscript/**'
+      - 'README.md'
+
+jobs:
+  publish_textbook:
+    runs-on: ubuntu-20.04
+    steps:
+      
+      - name: Download Source Files
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc
+        run: brew install pandoc
+
+      - name: Setup TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: TeX Dependencies
+        run: |
+          tlmgr --version
+
+      - name: Build Website
+        run: |
+          bash lantern.sh
+          touch ./public/.nojekyll
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/
