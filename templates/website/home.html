@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="$lang$" data-theme="auto" $if(dir)$dir="$dir$" $endif$>
+<html lang="$lang$" data-theme="light" $if(dir)$dir="$dir$" $endif$>
 
 <head>
     <meta charset="utf-8" />
@@ -65,13 +65,6 @@
     <a class="skip-link" href="#info">
         Skip to book information.
     </a> $for(include-before)$ $include-before$ $endfor$
-
-    <div class="theme-switcher">
-        <ul>
-            <li><a href="#" data-theme-switcher="light">Light</a></li>
-            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-        </ul>
-    </div>
 
     <div class="title-card">
 
@@ -174,9 +167,6 @@
             }
         })();
     </script>
-
-    <!-- Minimal theme switcher -->
-    <script src="../js/minimal-theme-switcher.js"></script>
    
 </body>
 

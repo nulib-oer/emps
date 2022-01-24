@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="auto">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -24,12 +24,6 @@
 </head>
 
 <body>
-    <div class="theme-switcher">
-        <ul>
-            <li><a href="#" data-theme-switcher="light">Light</a></li>
-            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-        </ul>
-    </div>
    
     <h1 class="sr-only">$title$</h1>
     $for(include-before)$ $include-before$ $endfor$
@@ -81,10 +75,7 @@ $body$ $if(definitions)$ ${ definitions.html() } $endif$
             }
         })();
     </script>
-
-    <!-- Minimal theme switcher -->
-    <script src="../js/minimal-theme-switcher.js"></script>
-
+    
 </body>
 
 </html>
