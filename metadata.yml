@@ -35,7 +35,7 @@ subjects:
   - Social Sciences
 
 description: |
-  The textbook proceeds with an introduction to theory and concept building, moves to an explanation of causal inference (how do we 'know' whether something is causal?), and then provides a quick introduction to data and hypothesis testing. Following that, each chapter is devoted to a particular research method used within political science: surveys, experiments, large N, small n, game theory, social network analysis, and machine learning. Each chapter follows a similar format and layout to help introduce the method, its advantages, disadvantages, and different applications.
+  This textbook begins with an introduction to theory and concept building, moves to an explanation of causal inference (how do we 'know' whether something is causal?), and then provides a quick introduction to data and hypothesis testing. Following that, each chapter is devoted to a particular research method used within political science: surveys, experiments, large N, small n, game theory, social network analysis, and machine learning. Each chapter follows a similar format and layout to help introduce the method, its advantages, disadvantages, and different applications.
 
 copyright:
   # holder: person or entity; default is the authors
