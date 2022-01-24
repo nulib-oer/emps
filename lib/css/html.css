@@ -94,9 +94,13 @@ details {
 
 details summary {
     font-weight: bold;
-    color: var(--primary);
+    color: var(--background-color);
+}
+
+details summary:focus {
+    color: var(--background-color);
 }
 
 details p {
-    color: var(--secondary);
+    color: var(--background-color);
 }
