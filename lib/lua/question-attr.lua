@@ -3,4 +3,3 @@ function Div(el)
       return { pandoc.Para { pandoc.Strong { pandoc.Str(el.attributes.text) }}, el }
     end
 end
-  

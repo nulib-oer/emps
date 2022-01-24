@@ -15,6 +15,14 @@ function Div(el)
       -- this function inserts "\\end{solution}" at the end of the Div element
   end
   -- the following if statement performs the same function as the previous, but for the "notes" custom block instead
+  if el.classes[1] == "question" then
+    table.insert(
+      el.content, 1,
+      pandoc.RawBlock("latex", "\\begin{shaded*}"))
+    table.insert(
+      el.content,
+      pandoc.RawBlock("latex", "\\end{shaded*}"))
+  end
   if el.classes[1] == "notes" then
     table.insert(
       el.content, 1,

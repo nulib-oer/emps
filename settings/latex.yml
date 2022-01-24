@@ -51,6 +51,7 @@ dpi: 72
 
 # lua filters for adding new environments
 filters:
+  - lib/lua/question-attr.lua
   - lib/lua/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output

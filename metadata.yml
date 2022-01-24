@@ -19,23 +19,23 @@ contributor:
   - John Lee
 
 publication-year: 2021
-#doi: 10.1000/xyz123
+doi: 10.21985/n2-cc4m-ke11
 #isbn-p: something
 #isbn-e: something
-#url: something
+url: https://emps.northwestern.pub
 
-#keywords:
-#  - keyword
-#  - keyword
-#  - keyword
-#
-#subjects: 
-#  - Subject
-#  - Subject
-#  - Subject
+keywords:
+  - college textbook
+  - undergraduate
+  - introduction to political science
+
+subjects: 
+  - Political Science
+  - Quantitative Methods
+  - Social Sciences
 
 description: |
-  This is an introductory college textbook on using empirical methods in political science research.
+  The textbook proceeds with an introduction to theory and concept building, moves to an explanation of causal inference (how do we 'know' whether something is causal?), and then provides a quick introduction to data and hypothesis testing. Following that, each chapter is devoted to a particular research method used within political science: surveys, experiments, large N, small n, game theory, social network analysis, and machine learning. Each chapter follows a similar format and layout to help introduce the method, its advantages, disadvantages, and different applications.
 
 copyright:
   # holder: person or entity; default is the authors
@@ -43,8 +43,8 @@ copyright:
   statement-uri: http://rightsstatements.org/vocab/InC/1.0/
   license: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) 
   license-uri: https://creativecommons.org/licenses/by-nc/4.0/
-  #attribution: |
-  #  [Lastname, Firstname. Title of Book. Place of publication: Publisher, Year of publication.]
+  attribution: |
+    Clipperton, J. (Ed.). 2022. Empirical Methods in Political Science: An Introduction. Northwestern University Libraries. https://doi.org/10.21985/n2-cc4m-ke11
   #exceptions:    
   #  - Chapter written under a different license
   #  - Image used with permission of the creator

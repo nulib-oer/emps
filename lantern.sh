@@ -293,11 +293,10 @@ server() {
 }
 
 all_formats() {
-    markdown
     epub
     docx
     oai
-    pdf_context # change to pdf_latex if using LaTeX
+    pdf_latex # change to pdf_latex if using LaTeX
     html
 }
 

@@ -64,3 +64,30 @@ if FORMAT:match 'docx' then
     end
   end
 end
+
+if FORMAT:match 'latex' then
+  function Div(el)
+    v,i = el.classes:find("question")
+    if i ~= nil then
+      el.classes[i] = nil
+      
+      local context
+      local res = List:new{}
+      
+      context =
+        '{\\framed[align={flushleft,nothyphenated,verytolerant}]{' ..
+        '\\bf{' ..
+        el.attributes["text"] ..
+        '}\\blank' .. 
+        '\\tf{'
+      table.insert(res, pandoc.RawBlock('context', context))
+
+      for _, block in ipairs(el.content) do
+        table.insert(res, block)
+      end
+      table.insert(res, pandoc.RawBlock('context', '}}'))
+      
+    return res
+    end
+  end
+end
