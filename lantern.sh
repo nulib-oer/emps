@@ -10,7 +10,7 @@ siteurl=''
 
 # utilities
 
-pandoc_command='pandoc --verbose' # change to 'pandoc --verbose' to debug
+pandoc_command='pandoc' # change to 'pandoc --verbose' to debug
 
 # setup
 
