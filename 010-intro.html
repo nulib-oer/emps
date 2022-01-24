@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc via Lantern" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/html.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Empirical Methods in Political Science | Northwestern University Libraries</title>
+
+    
+
+    <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+    <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    
+</head>
+
+<body>
+   
+    <h1 class="sr-only">Empirical Methods in Political Science</h1>
+    
+    <main class="container">
+        <div class="grid">
+            <div class="toc">
+                <aside>
+                    <nav>
+                        <a href="index.html" class="back">
+                            Back to Home
+                        </a>
+                        <ul>                      
+                            <li><a href="010-intro.html">Introduction</a></li>                      
+                            <li><a href="020-casual-inference.html">Causal Inference and the Scientific Method</a></li>                      
+                            <li><a href="030-theory.html">Theory</a></li>                      
+                            <li><a href="040-data.html">Data</a></li>                      
+                            <li><a href="050-hypothesis-testing.html">Hypothesis Testing</a></li>                      
+                            <li><a href="060-surveys.html">Surveys</a></li>                      
+                            <li><a href="070-experiments.html">Experiments</a></li>                      
+                            <li><a href="080-large-n.html">Large N</a></li>                      
+                            <li><a href="090-small-n.html">Small N</a></li>                      
+                            <li><a href="100-social-networks.html">Social networks</a></li>                      
+                            <li><a href="110-machine-learning.html">Machine Learning</a></li>                      
+                            <li><a href="120-conclusion.html">Conclusions</a></li>                      
+                            <li><a href="900-appendix-math.html">Mathematical Appendix</a></li>                         
+                        </ul>
+                        <a href="#top" class="back">
+                            Back to Top
+                        </a>
+                    </nav>
+                </aside>
+            </div>
+            <div class="content" id="#top">
+                <h2></h2>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Jean Clipperton</strong></p>
+<h3 id="what-is-political-science">What is Political Science?</h3>
+<p>This textbook focuses upon empirical methods used in political science. Before turning to the methods, it can be helpful to understand what political science is and what political science research can look like. Broadly, the discipline focuses on power and events throughout history. Some scholars focus on modern issues (e.g. Brexit) while others focus on historical ones (e.g. the New Deal in the U.S.). There are a variety of methods used and scholars are typically organized around the area/region they study.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h4 id="subfields-in-political-science">Subfields in Political Science</h4>
+<p>There are four primary subfields in political science (although we can consider many subdivisions, additional groupings, and so on): comparative politics, American politics, international relations/world politics, and theory. For this text, we will focus on quantitative political science and so we will consider the first three subfields.</p>
+<ul>
+<li><p><strong>Comparative politics</strong> as a subfield focuses upon comparisons of countries or regions to one another. Typically, ‘comparativists’ have expertise that enables them to dig deeply into their region. However, the questions they ask are broadly relevant beyond the researcher’s region of expertise.</p></li>
+<li><p><strong>American politics</strong> focuses upon.…American politics. Here, scholars typically focus on behavior (e.g. voting), institutions (e.g. Congress), or history (American Political Development, a.k.a. ‘APD’). In other countries (e.g. Australia, Americanists are considered ‘comparativists’ ... so it’s all relative). Here, scholars typically focus on one of the approaches (e.g. institutions), but increasingly more scholars focus on both behavior and institutions, for example.</p></li>
+<li><p><strong>International relations</strong>, also known as IR or world politics, focuses on large-scale global questions. Questions here are often about trade, economic development, and/or political economy. There are different branches of IR. Focusing on the quantitative side, many IR scholars work with large datasets, perhaps only slightly more so than in other fields. Qualitative work, specifically, case studies, represents approximately 45% of the field as measured by <span class="citation" data-cites="bennettWePreachWhat2003">(<a href="#ref-bennettWePreachWhat2003" role="doc-biblioref">Bennett, Barth, and Rutherford 2003</a>)</span>.</p></li>
+<li><p><strong>Methods</strong> Quantitative Methods is sometimes considered a subfield of political science and it is devoted to the development of quantitative methods, such as statistics, computational social science, and game theory. Methods scholars focus on tasks such as developing new methods for answering questions where previous ones had failed. For example, if you wanted to study something that either happens or doesn’t, then a regression wouldn’t be appropriate. You would need a new/different research method. Similarly, if you’re looking at something that unfolds over different stages, you might need to develop a strategic model to understand how the actors are incentivized to act.</p></li>
+</ul>
+<h3 id="questions-in-political-science">Questions in Political Science</h3>
+<p>Questions in political science span the globe and often consider power: who has power, how that power is used and/or abused, and how power is specified. Here are a few questions that are or have been frequently studied:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<ul>
+<li><p>Why are some countries democratic and others aren’t?</p></li>
+<li><p>Does democratic rule make people better off? How?</p></li>
+<li><p>What sort of political institutions lead to best outcomes?</p></li>
+<li><p>What policies and institutions help diverse groups to live in peace?</p></li>
+<li><p>What are causes of war? How can we prevent war?</p></li>
+<li><p>What leads to cooperation between countries?</p></li>
+<li><p>What are best ways to promote prosperity and avoid poverty?</p></li>
+<li><p>Why do people vote and participate in politics as they do?</p></li>
+<li><p>Is there a ‘resource curse’?</p></li>
+</ul>
+<p>These are big questions. While progress has been made toward answering many of them, they are often so large and broad that a different interpretation can lead to a different finding: for example, what would be a best outcome for a political institution, Stability (and thus low turnover) or a responsive government?</p>
+<p>As we go through the text, we’ll introduce different research questions and topics that span subfields and methods to demonstrate the range of political science research.</p>
+<h3 id="what-are-empirical-political-science-methods">What are Empirical Political Science Methods?</h3>
+<p>In this textbook, we will focus on <em>empirical</em> research methods – meaning how political scientists use and think about quantitative data. These methods are how political scientists go from their initial question to being able to find an answer. They can be a regression/statistics, but they can also involve interviews, or mapping out social networks.</p>
+<p>Political scientists use a range of methods to answer their research questions, with the key focus being whether the tool is appropriate for the job. Often, political scientists will specialize in one primary method, and receive training in a few others. This will shape how the researcher sees questions (for example, my own training is quantitatively-focused and so I tend to think about things from a quantitative mindset while a friend of mine has a qualitative background, so to her, she thinks about things like process as a key driver) and how that researcher is able to answer those questions.</p>
+<h4 id="types-of-methods">Types of Methods</h4>
+<p>There are many types of methods used in political science. In the realm of quantitative political science, common methods include the following approaches listed below. There is one chapter that focuses upon techniques like interviews and participant observation, but the broad focus of the book is on quantitative data. Discussion about quantitative and qualitative methods is an important distinction within the discipline.</p>
+<ul>
+<li><p><strong>Surveys:</strong> Perhaps the most accessible or well-known approach. Surveys are questions asked of respondents. We will focus on how surveys are designed and how respondents are selected.</p></li>
+<li><p><strong>Experiments:</strong> Experiments are often described as the ‘gold standard’ for research and are common in many areas outside political science. In an experiment, there are frequently two groups that are identical to one another except that one group gets the ‘treatment’ and the other group does not. For example, one group might be exposed to a political ad of a certain type while the remaining group is not, to understand the connection between politics and emotions as in <span class="citation" data-cites="Karl2019">(<a href="#ref-Karl2019" role="doc-biblioref">Karl 2019</a>)</span>.</p></li>
+<li><p><strong>Large N:</strong> In cases where there are a wealth of data, scholars may opt for statistical research. What this looks like can depend upon the size of the data.</p></li>
+<li><p><strong>Small N:</strong> Studies that have fewer observations or use approaches like interviews often focus on the mechanisms behind a process. For example, under what circumstances do institutions evolve and change? See: <span class="citation" data-cites="mahoney2009explaining ostrom_2015">(<a href="#ref-mahoney2009explaining" role="doc-biblioref">Mahoney and Thelen 2009</a>; <a href="#ref-ostrom_2015" role="doc-biblioref">Ostrom 2015</a>)</span>.</p></li>
+<li><p><strong>Game Theory:</strong> In game theoretic approaches we represent the strategic choices actors make as a series of interdependent choices. There are frequently two key actors who must make decisions (such as cooperation or defection or the imposition of sanctions <span class="citation" data-cites="pond2017">(<a href="#ref-pond2017" role="doc-biblioref">Pond 2017</a>)</span>). These actions weigh the utility of certain choices dependent upon what and how their opponent(s) behave.</p></li>
+<li><p><strong>Social Networks:</strong> In social network research, it is the connections between individuals that become the items of interest. How do different actors relate to one another? How might information move around/through a community? These communities can be real (high school social networks, families) or virtual (who follows whom on twitter, whose work is cited by others).</p></li>
+<li><p><strong>Machine Learning:</strong> In this approach, very large datasets are used. Frequently, the aim is to discover patterns and connections in the data or to otherwise harness the power of many observations to discern the hidden order in the data.</p></li>
+</ul>
+<h4 id="qualitative-and-quantitative-political-science">Qualitative and Quantitative Political Science</h4>
+<p>Empirical research methods typically use quantitative data. These data are frequently numerical and can often show broad trends that are happening within the question of interest. Other scholars use qualitative methods. In a qualitative framework, the ‘data’ can be anything from noticing how spaces are shared by individuals at the Paris Climate Summit <span class="citation" data-cites="marionsuiseeyaMakingInfluenceVisible2019">(<a href="#ref-marionsuiseeyaMakingInfluenceVisible2019" role="doc-biblioref">Marion Suiseeya and Zanotti 2019</a>)</span> to interviews <span class="citation" data-cites="helmkeCourtsConstraintsJudges2005">(<a href="#ref-helmkeCourtsConstraintsJudges2005" role="doc-biblioref">Helmke 2005</a>)</span>. Often (but not always; see: <span class="citation" data-cites="pearlmanWeCrossedBridge2017">Pearlman (<a href="#ref-pearlmanWeCrossedBridge2017" role="doc-biblioref">2017</a>)</span>) qualitative researchers work with fewer cases (small-n data) and quantitative researchers look at larger datasets (large-n data).</p>
+<h5 id="multiple-or-mixed-methods">Multiple or Mixed Methods</h5>
+<p>Mixed or multiple methods refers to how many different approaches a scholar or scholars use in their analysis. Although they often specialize in one method, researchers may still combine methods – either through their own training and/or background – or through collaborating with others. For example, the use of experiments and surveys <span class="citation" data-cites="teele_kalla_rosenbluth_2018 bonilla_mo_2018">(<a href="#ref-teele_kalla_rosenbluth_2018" role="doc-biblioref">Teele, Kalla, and Rosenbluth 2018</a>; <a href="#ref-bonilla_mo_2018" role="doc-biblioref">Bonilla and Mo 2018</a>)</span> or interviews and observation <span class="citation" data-cites="vargas2016wounded">(<a href="#ref-vargas2016wounded" role="doc-biblioref">Vargas 2016</a>)</span>).</p>
+<p>Both quantitative and qualitative approaches offer valuable insight into any given research question and there has been a bit of a divide that’s arisen within the discipline as technology evolves. With the increasing availability of quantitative data and low barriers to data gathering, it can be tempting to emphasize quantitative methods. Given the additional training often needed to hone and refine one’s skillset, individuals frequently rely on a primarily quantitative or qualitative approach. However, there is some movement toward what is termed a ‘mixed method’ or ‘multi-method’ approach in which <em>both</em> quantitative and qualitative data are used in a research project <span class="citation" data-cites="seawrightMultiMethodSocialScience2016">(<a href="#ref-seawrightMultiMethodSocialScience2016" role="doc-biblioref">Seawright 2016</a>)</span>. As it will become clear at the end of the text, each method has advantages and disadvantages: combining methods can help leverage the strengths of each chosen method while minimizing the disadvantages when including a complementary method. Of course, this approach is not without a high cost – individuals must then be trained and proficient in multiple methods, something that can be challenging and time consuming.</p>
+<p>Because of our (Clipperton et al) own background and training, we emphasize empirical approaches, but there are still many different ways to approach a question. A common trope regards advanced methodological training as equating to obtaining a hammer so that everything looks like a nail. Our hope is that you’ll develop an understanding of the different tools available in the political scientist’s tool kit so that you will be able to appreciate and interpret existing work while thinking critically about how to approach your own research questions. The research question itself can help you choose an appropriate method–rather than the reverse.</p>
+<h3 id="scientific-method">Scientific Method</h3>
+<p>Regardless of the question and the method, political scientists need a way to work through the evaluation of their question. For that, we will thank <a href="https://www.iep.utm.edu/pop-sci/">Karl Popper</a> and his push not only for falsification but for urging that scholars have a <em>method</em> for their inquiry.</p>
+<p>In this text, we rely on an adaptation of the scientific method. This is something we will use for each research article and every research proposal, so it’s important to understand each component fully. Below, we lay out the different elements of the scientific method. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<ul>
+<li><p><strong>Puzzle:</strong> This is the research question. It must be something that needs answered – often in the format, ‘research leads us to expect x, but we observe y’ or ‘here are two contradictory arguments, which is right?’ In any case, a puzzle is something that is not only unanswered, but interesting. It can somehow tell us about the world in a broader way, even if the question itself is quite narrow.</p></li>
+<li><p><strong>Theory:</strong> This is the explanation or answer to the question. Typically, you will have an outcome that you wish to explain with some important factor. In the following chapter, we’ll introduce theory more fully.</p></li>
+<li><p><strong>Hypotheses &amp; Implications:</strong> while a theory is more broad and about the relationship of factors, hypotheses are often <em>testable implications</em> that stem directly from the theory.</p></li>
+<li><p><strong>Evidence/Test:</strong> evidence is how the authors support their theory and conclusions. It might be longitudinal data with a regression; it might be survey data with differences of means; it might be interview data. Here, you’ll explain how they are evaluating their argument.</p></li>
+<li><p><strong>Falsifiablity:</strong> Is it possible to disprove the theory? Sometimes articles might focus on a new paradigm for approaching a research area. These would not be falsifiable as they’re an approach or suggestion. Falsifiable questions can be proven wrong – for example, if I argue that having more political actors will lead to fewer<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> pieces of significant legislation being produced, you can see whether my theory was correct. In a case with many political actors, there should be few pieces of legislation. If there are many, my theory<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> is not correct <span class="citation" data-cites="tsebelisVetoPlayersInstitutional2000">(<a href="#ref-tsebelisVetoPlayersInstitutional2000" role="doc-biblioref">Tsebelis 2000</a>)</span>.</p></li>
+<li><p><strong>Conclusions:</strong> This is what the study concludes – what are the major findings? Be specific about the findings and whether/how they generalize. For example, if the article is focusing on the 1980 Ugandan elections, what are the findings and what does that tell us overall?</p></li>
+<li><p><strong>Do I buy it?:</strong> This is where you’ll enter your critique of the article. You might wonder about the method they chose, how it was executed, or their particular case study. This is the point where you’ll describe your concerns and then evaluate whether the evidence presented is sufficient enough to overcome those objections.</p></li>
+</ul>
+<p>Note that the scientific method is a helpful means to organize an article (minus the last element), but it’s an <em>even more</em> helpful way to organize your notes about an article. Using the scientific method can help provide a consistent, clear, organized structure that focuses on the essential elements of an article or book. In all but the last stage, you will want to be as objective as possible–laying out only the relevant elements/details. In the final portion, ‘do I buy it’, you will put down your critique. But to criticize something, you must first understand what is being argued.</p>
+<h3 id="what-can-research-tell-us">What Can Research Tell Us?</h3>
+<p>When reading or conducting research, there are twin goals at play: the first is what relationships can be established in the research project/dataset itself; the second is how the question answered by the research project can speak about a broader population than just the data in the research project.</p>
+<h4 id="support-for-hypotheses">Support for hypotheses</h4>
+<p>This first component has to do with what can be established within the framework of the question and data. For example, suppose your research question has to do with political attitudes of young Americans. To answer this, you collect data from a random sample of Americans (See: chapters on <em>Data</em> and <em>Hypothesis Testing</em>) your findings would pertain to your research question within your data. If you had a statistically significant relationship, you would find support for your hypotheses. If you failed to have a statistically significant relationship, you would not find support for your hypotheses. You would make conclusions about the individual data points within your dataset.</p>
+<h4 id="generalizability">Generalizability</h4>
+<p>The second component has to do with how your research fits into a broader picture: what can your research tell us about young Americans and how does that fit into a larger context? Supposing you conducted your sample appropriately (See: chapter on <em>Data</em>), you would be able to speak to not only the individuals in your sample, but the population they are intended to represent. This is the important component of research and why we will spend a large amount of time discussing sampling approaches and appropriate methodology. While your sample of, say, 1600 data points may be interesting, it’s really only interesting in that it can tell us about the 327 million other data points we don’t know anything about.</p>
+<h3 id="overview-of-the-textbook">Overview of the Textbook</h3>
+<p>The textbook proceeds with an introduction to theory and concept building, moves to an explanation of causal inference (how do we ‘know’ whether something is causal?), and then provides a quick introduction to data and hypothesis testing. Following that, each chapter is devoted to a particular research method used within political science: surveys, experiments, large N, small n, game theory, social network analysis, and machine learning. Each chapter follows a similar format and layout to help introduce the method, its advantages, disadvantages, and different applications.</p>
+<h1 class="unnumbered" id="bibliography">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-bennettWePreachWhat2003" class="csl-entry" role="doc-biblioentry">
+Bennett, Andre, Aharo Barth, and Kennet R Rutherford. 2003. <span>“Do <span>We Preach What We Practice</span>? <span>A Survey</span> of <span>Methods</span> in <span>Political Science Journals</span> and <span>Curricula</span>.”</span> <em>PS: Political Science &amp; Politics</em> 36 (3): 373–78.
+</div>
+<div id="ref-bonilla_mo_2018" class="csl-entry" role="doc-biblioentry">
+Bonilla, Tabitha, and Cecilia Hyunjung Mo. 2018. <span>“Bridging the Partisan Divide on Immigration Policy Attitudes Through a Bipartisan Issue Area: The Case of Human Trafficking.”</span> <em>Journal of Experimental Political Science</em> 5 (2): 107–20. <a href="https://doi.org/10.1017/XPS.2018.3">https://doi.org/10.1017/XPS.2018.3</a>.
+</div>
+<div id="ref-clark2017principles" class="csl-entry" role="doc-biblioentry">
+Clark, William Roberts, Matt Golder, and Sona Nadenichek Golder. 2017. <em>Principles of Comparative Politics</em>. CQ Press.
+</div>
+<div id="ref-dion_sumner_mitchell_2018" class="csl-entry" role="doc-biblioentry">
+Dion, Michelle L., Jane Lawrence Sumner, and Sara McLaughlin Mitchell. 2018. <span>“Gendered Citation Patterns Across Political Science and Social Science Methodology Fields.”</span> <em>Political Analysis</em> 26 (3): 312–27. <a href="https://doi.org/10.1017/pan.2018.12">https://doi.org/10.1017/pan.2018.12</a>.
+</div>
+<div id="ref-helmkeCourtsConstraintsJudges2005" class="csl-entry" role="doc-biblioentry">
+Helmke, Gretchen. 2005. <em>Courts <span>Under Constraints</span>: <span>Judges</span>, <span>Generals</span>, and <span>Presidents</span> in <span>Argentina</span></em>. <span>Cambridge</span>: <span>Cambridge University Press</span>.
+</div>
+<div id="ref-Karl2019" class="csl-entry" role="doc-biblioentry">
+Karl, Kristyn L. 2019. <span>“Motivating Participation Through Political Ads: Comparing the Effects of Physiology and Self-Reported Emotion.”</span> <em>Political Behavior</em>, September. <a href="https://doi.org/10.1007/s11109-019-09569-2">https://doi.org/10.1007/s11109-019-09569-2</a>.
+</div>
+<div id="ref-mahoney2009explaining" class="csl-entry" role="doc-biblioentry">
+Mahoney, James, and Kathleen Thelen. 2009. <em>Explaining Institutional Change: Ambiguity, Agency, and Power</em>. Cambridge University Press.
+</div>
+<div id="ref-marionsuiseeyaMakingInfluenceVisible2019" class="csl-entry" role="doc-biblioentry">
+Marion Suiseeya, Kimberly R., and Laura Zanotti. 2019. <span>“Making <span>Influence Visible</span>: <span>Innovating Ethnography</span> at the <span>Paris Climate Summit</span>.”</span> <em>Global Environmental Politics</em> 19 (2): 38–60. <a href="https://doi.org/10.1162/glep_a_00507">https://doi.org/10.1162/glep_a_00507</a>.
+</div>
+<div id="ref-ostrom_2015" class="csl-entry" role="doc-biblioentry">
+Ostrom, Elinor. 2015. <em>Governing the Commons: The Evolution of Institutions for Collective Action</em>. Canto Classics. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781316423936">https://doi.org/10.1017/CBO9781316423936</a>.
+</div>
+<div id="ref-pearlmanWeCrossedBridge2017" class="csl-entry" role="doc-biblioentry">
+Pearlman, Wendy. 2017. <em>We <span>Crossed</span> a <span>Bridge</span> and <span>It Trembled</span>: <span>Voices</span> from <span>Syria</span></em>. <span>New York</span>: <span>HarperCollins</span>.
+</div>
+<div id="ref-pond2017" class="csl-entry" role="doc-biblioentry">
+Pond, Amy. 2017. <span>“Economic Sanctions and Demand for Protection.”</span> <em>Journal of Conflict Resolution</em> 61 (5): 1073–94. <a href="https://doi.org/10.1177/0022002715596777">https://doi.org/10.1177/0022002715596777</a>.
+</div>
+<div id="ref-seawrightMultiMethodSocialScience2016" class="csl-entry" role="doc-biblioentry">
+Seawright, Jason. 2016. <em>Multi-<span>Method Social Science</span>: <span>Combining Qualitative</span> and <span>Quantitative Tools</span></em>. Strategies for <span>Social Inquiry</span>. <span>Cambridge</span>: <span>Cambridge University Press</span>.
+</div>
+<div id="ref-sumner_2018" class="csl-entry" role="doc-biblioentry">
+Sumner, Jane Lawrence. 2018. <span>“The Gender Balance Assessment Tool (GBAT): A Web-Based Tool for Estimating Gender Balance in Syllabi and Bibliographies.”</span> <em>PS: Political Science &amp;Amp; Politics</em> 51 (2): 396–400. <a href="https://doi.org/10.1017/S1049096517002074">https://doi.org/10.1017/S1049096517002074</a>.
+</div>
+<div id="ref-teele_kalla_rosenbluth_2018" class="csl-entry" role="doc-biblioentry">
+Teele, Dawn, Joshua Kalla, and Frances Rosenbluth. 2018. <span>“The Ties That Double Bind: Social Roles and Women’s Underrepresentation in Politics.”</span> <em>American Political Science Review</em> 112 (3): 525–41. <a href="https://doi.org/10.1017/S0003055418000217">https://doi.org/10.1017/S0003055418000217</a>.
+</div>
+<div id="ref-tsebelisVetoPlayersInstitutional2000" class="csl-entry" role="doc-biblioentry">
+Tsebelis, George. 2000. <span>“Veto <span>Players</span> and <span>Institutional Analysis</span>.”</span> <em>Governance</em> 13 (4): 441–74. <a href="https://doi.org/10.1111/0952-1895.00141">https://doi.org/10.1111/0952-1895.00141</a>.
+</div>
+<div id="ref-vargas2016wounded" class="csl-entry" role="doc-biblioentry">
+Vargas, Robert. 2016. <em>Wounded City: Violent Turf Wars in a Chicago Barrio</em>. Oxford University Press.
+</div>
+</div>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>A note about this textbook: in its creation, we have worked to balance our references across subfields (see next subsection) and the race and gender of cited scholars. Our aim is to provide a diverse look at political science, incorporating as many different perspectives as possible. We use a tool developed by Jane Sumner <span class="citation" data-cites="sumner_2018">(<a href="#ref-sumner_2018" role="doc-biblioref">Sumner 2018</a>)</span> that came out of a project with <span class="citation" data-cites="dion_sumner_mitchell_2018">(<a href="#ref-dion_sumner_mitchell_2018" role="doc-biblioref">Dion, Sumner, and Mitchell 2018</a>)</span> to evaluate the balance in each chapter in the textbook.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>thank you to Andrew Roberts whose original list has been adapted here<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>These questions adapted from <span class="citation" data-cites="clark2017principles">(<a href="#ref-clark2017principles" role="doc-biblioref">Clark, Golder, and Golder 2017</a>)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>In the following chapter, we’ll discuss how to conceptualize ‘many’ and ‘few’)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>This is actually a quite famous theory put forth by George Tsebelis, called ‘Veto Players’ <span class="citation" data-cites="tsebelisVetoPlayersInstitutional2000">(<a href="#ref-tsebelisVetoPlayersInstitutional2000" role="doc-biblioref">Tsebelis 2000</a>)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section> 
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        /* pandoc creates two page titles; let's remove the first one */
+        page_titles = document.querySelectorAll('h2');
+        first = page_titles[0];
+        first.remove();
+
+    </script>
+
+    <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                    links[i].target = '_blank';
+                }
+            }
+        })();
+    </script>
+    
+</body>
+
+</html>
