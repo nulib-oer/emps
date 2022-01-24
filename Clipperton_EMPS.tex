@@ -6851,7 +6851,7 @@ of social entity, the graph can be called a \textbf{social network}.
 \subsection{Network Representations}\label{network-representations}}
 
 There are different ways to represent a network. The two most accessible
-methods are sociograms and adjacency matrices. The sociogram in figure below
+methods are sociograms and adjacency matrices. The sociogram in figure 10.1
 and the adjacency matrix in Table 11.1 are representations of the same
 network.
 
@@ -6864,7 +6864,7 @@ nodes it connects}
 \end{figure}
 
 \begin{longtable}[]{@{}lccccc@{}}
-\caption{Table 11.1: The adjacency matrix for a network with nodes
+\caption{Table 10.1: The adjacency matrix for a network with nodes
 \([A, B, C, D, E]\). Rows and columns represent nodes; \(1\) denotes an edge
 between two nodes and \(0\) denotes absence of edge, with dashes along the
 diagonal to demonstrate that a node cannot have an edge to itself. In this
@@ -6942,7 +6942,7 @@ relationship.
 
 One example of such a graph is the friendship network of students in an
 elementary school class based on bonds observed by their teacher (see figure
-above. In this network, an edge between two students means that their teacher
+10.2. In this network, an edge between two students means that their teacher
 perceives them to have a mutual friendship; note that a tie does not indicate
 any hierarchy among the connected nodes. If, for example, the teacher infers
 that Inge and Jaylen are friends, then an undirected tie exists between them
@@ -6956,9 +6956,9 @@ relationships as those in which the roles of the source and destination nodes
 differ.
 
 Earlier, we described a network to model mentorship and advising between
-political scientists (see figure below). For each tie in this network, one
-node has the role of mentor and the other the role of student; note that each
-node can take on one role or the other, or even \emph{both} depending on the
+political scientists (see figure 10.3). For each tie in this network, one node
+has the role of mentor and the other the role of student; note that each node
+can take on one role or the other, or even \emph{both} depending on the
 direction of its ties to other nodes. Let there be eight scholars in the
 network: Akemi, Brett, Chi, Dani, Elvan, Farah, Gal, and Harvey. Akemi is the
 most senior scholar and was an adviser to Brett and Chi when they were
@@ -7134,8 +7134,8 @@ pair of nodes in a network, there may exist multiple paths.
 The \textbf{path length} is the number of edges in a given path between two
 nodes, and the shortest path between two given nodes is called their
 \textbf{geodesic} (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman and
-Faust 1994}). The sociograms below highlight the geodesics between Kiko and
-Mega for both undirected and directed representations of the student
+Faust 1994}). The sociograms in figure 10.5 highlight the geodesics between
+Kiko and Mega for both undirected and directed representations of the student
 friendship network.
 
 The \textbf{distance} between any two nodes, also referred to as the
@@ -7169,14 +7169,14 @@ paths in each sociogram must follow the directions of the arrows}
 \textbf{Subgraphs and Components}
 
 A network in which each node is directly connected to all the other nodes is
-called a \textbf{complete graph} (see figure below; this is a special case of
-a \textbf{geographic network}, which we will describe later.
+called a \textbf{complete graph} (see figure 10.6; this is a special case of a
+\textbf{geographic network}, which we will describe later.
 
 A graph in which each node can reach all other nodes via a path is called a
 \textbf{connected graph} (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman
-and Faust 1994}). The graphs shown in the above figures are connected graphs.
-Note that while not every connected graph is a complete graph, all complete
-graphs are connected graphs.
+and Faust 1994}). The graphs shown in figures 10.1, 10.2, 10.3, 10.5, 10.6 are
+connected graphs. Note that while not every connected graph is a complete
+graph, all complete graphs are connected graphs.
 
 If we take a subset of the nodes in a graph, including some or all of the
 edges among the subset of nodes (or, alternately, a subset of edges and all
@@ -7203,8 +7203,8 @@ reachable via a path from at least one other node
 (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman and Faust 1994}). An
 equivalent definition describes a disconnected network as one in which at
 least one connected component is not reachable from another. This means that a
-disconnected graph has at least two connected components. The network shown
-below is a disconnected graph with three connected components.
+disconnected graph has at least two connected components. The network shown in
+figure 10.6 is a disconnected graph with three connected components.
 
 \begin{figure}
 \centering
@@ -7269,7 +7269,7 @@ can write the definition of closeness for a node \(v\) thus:
 \[Closeness(v) = \frac{1}{\sum_{i \neq v}^{n}d(v, i)}\] where \(d(v, i)\) is
 the geodesic distance between nodes \(v\) and \(i\)
 (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman and Faust 1994}). The
-network in figure above displays each node's closeness centrality.
+network in figure 10.7 displays each node's closeness centrality.
 
 \textbf{Degree centrality.} A third measure of centrality is \textbf{degree
 centrality}, which considers important nodes to be those that have many
@@ -7278,17 +7278,15 @@ To calculate the degree of a vertex in an undirected graph, we can simply
 count the number of edges it has
 (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman and Faust 1994}). Let us
 return to the example of an undirected friendship network among classmates as
-inferred by the teacher (shown in figure @ref(fig:fig11-8) with each node's
-degree labeled); in this network, if Parveen is connected to Inge, Nyasha,
-Orla, Quinn, and Tracy, then Parveen has a degree of \(5\).
+inferred by the teacher (shown in figure 10.8 with each node's degree
+labeled); in this network, if Parveen is connected to Inge, Nyasha, Orla,
+Quinn, and Tracy, then Parveen has a degree of \(5\).
 
 \begin{figure}
-\hypertarget{fig:11-8}{%
 \centering
 \includegraphics{images/social-networks/11-8.png}
 \caption{Degree as measured in undirected (left) and directed (indegree,
-center; and outdegree, right) networks}\label{fig:11-8}
-}
+center; and outdegree, right) networks}
 \end{figure}
 
 For a directed graph, a node's \textbf{indegree} is the number of edges
@@ -7296,18 +7294,18 @@ terminating there; the \textbf{outdegree} is the number of edges originating
 from the node (\protect\hyperlink{ref-WassermanFaust1994}{Wasserman and Faust
 1994}). As an example, we can consider the directed friendship network as
 described by the students (shown with indegree and outdegree labeled in
-figures @ref(fig:fig11-8) and @ref(fig:fig11-9), respectively). In this
-network, the students Inge, Nyasha, Orla, Quinn, and Tracy consider Parveen to
-be a friend, so Parveen has an indegree of \(5\). Parveen, in turn, considers
-only Inge, Nyasha, and Tracy to be friends and so has an outdegree of \(3\).
+figures 10.8 and 10.9, respectively). In this network, the students Inge,
+Nyasha, Orla, Quinn, and Tracy consider Parveen to be a friend, so Parveen has
+an indegree of \(5\). Parveen, in turn, considers only Inge, Nyasha, and Tracy
+to be friends and so has an outdegree of \(3\).
 
 A network's \textbf{degree distribution} describes the probability of a given
 node in the graph having a degree of a certain value. In practical terms, we
 can think of it as a set of numbers, where each reflects the count of nodes in
 the graph with degree of \(0\), degree of \(1\), degree of \(2\), and so on.
 The degree distribution for the undirected friendship network is displayed in
-figure @ref(fig:fig11-9). The concept of degree distribution will be important
-later when we discuss \emph{power-law networks}.
+figure 10.9. The concept of degree distribution will be important later when
+we discuss \emph{power-law networks}.
 
 The \textbf{mean degree} of a graph is the mean average of the degrees for all
 the vertices in the entire graph
@@ -7335,13 +7333,11 @@ vertices \([A, B, C]\) form a triangle, the ordered triples \(ABC\), \(ACB\),
 \emph{triangles} formed by each triple are all the same.
 
 \begin{figure}
-\hypertarget{fig:fig11-9}{%
 \centering
 \includegraphics{images/social-networks/11-9.png}
 \caption{A histogram of the degree distribution for the undirected friendship
 network shows that there are two nodes with degree \(1\), four with degree
-\(2\), and one each with degrees \(3\), \(4\), or \(5\)}\label{fig:fig11-9}
-}
+\(2\), and one each with degrees \(3\), \(4\), or \(5\)}
 \end{figure}
 
 For our purposes, we will assume that all edges are \emph{undirected} when
@@ -7369,7 +7365,7 @@ undefined values can be replaced with \(0\).) This metric measures cohesion
 among a given vertex and its neighbors
 (\protect\hyperlink{ref-BarratEtAl2004}{Barrat et al. 2004}). The local
 transitivity for nodes in the undirected friendship network is shown in figure
-@ref(fig:fig11-10) (with undefined values replaced with \(0\)).
+10.10 (with undefined values replaced with \(0\)).
 
 We can compute the average local clustering coefficient for a graph \(g\) by
 taking the mean across all nodes:
@@ -7380,7 +7376,7 @@ number of nodes in the entire network
 Barrat et al. (\protect\hyperlink{ref-BarratEtAl2004}{2004}), this measure
 ``expresses the statistical level of cohesiveness measuring the global density
 of interconnected vertex triples in the network''
-((\protect\hyperlink{ref-BarratEtAl2004}{Barrat et al. 2004, 3750})).
+(\protect\hyperlink{ref-BarratEtAl2004}{Barrat et al. 2004, 3750}).
 
 Finally, to calculate the \textbf{global clustering coefficient}, also called
 the \textbf{global transitivity}, for a graph \(g\), we take the ratio of
@@ -7392,13 +7388,10 @@ where \(Triangles(g)\) is the total number of triangles in graph \(g\) and
 (\protect\hyperlink{ref-Opsahl2013}{Opsahl 2013}).
 
 \begin{figure}
-\hypertarget{fig:fig11-10}{%
 \centering
 \includegraphics{images/social-networks/11-10.png}
 \caption{Local transitivity for the undirected friendship network (with global
-transitivity = \(0.3913\) and average local transitivity =
-\(0.5407\))}\label{fig:fig11-10}
-}
+transitivity = \(0.3913\) and average local transitivity = \(0.5407\))}
 \end{figure}
 
 \textbf{Density}
@@ -7418,16 +7411,14 @@ A \textbf{geographic network} is one in which each node is connected to the
 \emph{k} nearest nodes, with \emph{k} ranging from \(1\) to the total number
 of nodes in the network minus \(1\). If \emph{k} takes on the maximum
 value---that is, if each node is connected to all the other nodes---then the
-network is called a \textbf{complete graph}. figure @ref(fig:fig11-11) shows a
-geographic network with \(k = 4\).
+network is called a \textbf{complete graph}. figure 10.11 shows a geographic
+network with \(k = 4\).
 
 \begin{figure}
-\hypertarget{fig:fig11-11}{%
 \centering
 \includegraphics{images/social-networks/11-11.png}
 \caption{A geographic network with \(k = 4\). Each node is connected to its
-four closest neighbors}\label{fig:fig11-11}
-}
+four closest neighbors}
 \end{figure}
 
 \textbf{Random Networks}
@@ -7435,8 +7426,8 @@ four closest neighbors}\label{fig:fig11-11}
 A \textbf{random network} is one in which, for each pair of nodes, there is a
 probability \(p\) that there is an edge between them. This probability is a
 constant for the entire graph and can range from \(0\) to \(1\). The sociogram
-in figure @ref(fig:fig11-12) shows a random graph of \(15\) nodes and
-probability \(p = 0.2\).
+in figure 10.12 shows a random graph of \(15\) nodes and probability
+\(p = 0.2\).
 
 \textbf{Small-World Networks}
 
@@ -7474,11 +7465,9 @@ distance between any two nodes---is ``exponentially smaller than the size of
 the network'' (\protect\hyperlink{ref-Kleinberg2000}{Kleinberg 2000, 845}).
 
 \begin{figure}
-\hypertarget{fig:fig11-12}{%
 \centering
 \includegraphics{images/social-networks/11-12.png}
-\caption{A random network with N = 15 and p = 0:2}\label{fig:fig11-12}
-}
+\caption{A random network with N = 15 and p = 0:2}
 \end{figure}
 
 The combination of these features results in a network through which
@@ -7486,9 +7475,9 @@ information, preferences, and other conditions (such as infectious disease)
 can diffuse quickly (\protect\hyperlink{ref-WattsStrogatz1998}{Watts and
 Strogatz 1998}).
 
-Figure @ref(fig:fig11-13) shows two representations of the same small-world
-network, one with a diameter of \(4\), mean degree centrality of \(3.1\) and a
-global clustering coefficient of \(0.155\).
+Figure 10.13 shows two representations of the same small-world network, one
+with a diameter of \(4\), mean degree centrality of \(3.1\) and a global
+clustering coefficient of \(0.155\).
 
 \textbf{Power-Law Networks}
 
@@ -7522,13 +7511,11 @@ model than a non-scale-free distribution''
 ((\protect\hyperlink{ref-BroidoClauset2019}{Broido and Clauset 2019})).
 
 \begin{figure}
-\hypertarget{fig:fig11-13}{%
 \centering
 \includegraphics{images/social-networks/11-13.png}
 \caption{Sociograms of a single small-world network with N = 17 nodes. This
 graph has a diameter of 4, mean degree centrality of 3:1 and a global
-clustering coefficient of 0:155}\label{fig:fig11-13}
-}
+clustering coefficient of 0:155}
 \end{figure}
 
 \hypertarget{applications-of-social-network-analysis}{%
@@ -7563,12 +7550,10 @@ network} around each ego, with alters labeled according to their own political
 leaning.
 
 \begin{figure}
-\hypertarget{fig:fig11-14}{%
 \centering
 \includegraphics{images/social-networks/11-14.png}
 \caption{A sociogram and histogram of the corresponding degree distribution
-for a power-law network}\label{fig:fig11-14}
-}
+for a power-law network}
 \end{figure}
 
 Next, the researchers calculate each ego's homophily thus: ``the homophily
@@ -7794,11 +7779,9 @@ sciences can ask an expanding range of research questions about social
 networks, and study these networks with an evolving body of methods.
 
 \begin{figure}
-\hypertarget{fig:fig11-15}{%
 \centering
 \includegraphics{images/social-networks/11-15.png}
-\caption{Sociograms for Questions 2 (left) and 3 (right)}\label{fig:fig11-15}
-}
+\caption{Sociograms for Questions 2 (left) and 3 (right)}
 \end{figure}
 
 Social network analysis has the potential to refine our interpretations of
@@ -7817,7 +7800,7 @@ thought, and practice---as well as advance political and social agendas.
   Which of the networks listed in {[}section 11.2.1{]} are examples of social
   networks?
 \item
-  Using the graph in figure @ref(fig:fig11-15), compute the following:
+  Using the graph in figure 10.15, compute the following:
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -7831,7 +7814,7 @@ thought, and practice---as well as advance political and social agendas.
     The network's density
   \end{enumerate}
 \item
-  Consider the graph in figure @ref(fig:fig11-15):
+  Consider the graph in figure 10.15:
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -7971,7 +7954,7 @@ Questions}\label{answers-to-application-questions-5}}
   and advice-seeking relationships among all current federal circuit judges in
   the United States
 \item
-  Using the graph in figure @ref(fig:fig11-5), we find the following:
+  Using the graph in figure 10.5, we find the following:
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -8015,7 +7998,7 @@ Questions}\label{answers-to-application-questions-5}}
     Network density: \(0.5\)
   \end{enumerate}
 \item
-  Considering the graph in figure @ref(fig:fig11-15):
+  Considering the graph in figure 10.15:
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -8032,10 +8015,10 @@ Questions}\label{answers-to-application-questions-5}}
     The maximum degree is \(4\) and nodes \(4\), \(9\), \(10\), and \(14\)
     have a degree of \(4\).
   \item
-    See figure @ref(fig:11-16) for the highlighted path. The geodesic, or
-    shortest path, between nodes \(1\) and \(7\) is \([1, 2, 3, 7]\) and has a
-    path length of \(3\). This metric is called the \emph{geodesic distance}
-    or simply the \emph{distance}.
+    See figure 10.16 for the highlighted path. The geodesic, or shortest path,
+    between nodes \(1\) and \(7\) is \([1, 2, 3, 7]\) and has a path length of
+    \(3\). This metric is called the \emph{geodesic distance} or simply the
+    \emph{distance}.
   \item
     This network is most likely to be a small-world network because it has a
     large proportion of nodes with average degree centrality, and smaller
@@ -8053,11 +8036,9 @@ Questions}\label{answers-to-application-questions-5}}
 \end{enumerate}
 
 \begin{figure}
-\hypertarget{fig:fig11-16}{%
 \centering
 \includegraphics{images/social-networks/11-16.png}
-\caption{Highlighted geodesic between 1 and 7}\label{fig:fig11-16}
-}
+\caption{Highlighted geodesic between 1 and 7}
 \end{figure}
 
 \hypertarget{machine-learning}{%
@@ -8083,11 +8064,9 @@ popular Stanford course on machine learning (available through
 \href{https://www.coursera.org/learn/machine-learning}{Coursera}).
 
 \begin{figure}
-\hypertarget{fig:jl-figure1}{%
 \centering
 \includegraphics{images/ml/jl-figure1.png}
-\caption{Traditional Programming v. Machine Learning}\label{fig:jl-figure1}
-}
+\caption{Traditional Programming v. Machine Learning}
 \end{figure}
 
 The first definition is by Arthur Samuel, a former researcher at IBM and early
@@ -8098,8 +8077,7 @@ distinction between traditional programming and machine learning: i.e., in
 traditional programming, a computer takes in the data and the rules and
 generates the output; in machine learning, a computer takes the data and the
 output and generates the rules that describe the relationship between the
-input and the output. Figure @ref(fig:jl-figure1) provides an illustration of
-this idea.
+input and the output. Figure 11.1 provides an illustration of this idea.
 
 The second definition is more detailed and precise. According to Tom Mitchell,
 a computer scientist at Carnegie Mellon and the author of one of the first
@@ -8213,17 +8191,15 @@ that are due to the random noise (\(\epsilon\)). The problem here is that this
 kind of highly flexible model tends to generate a lower training MSE, but
 performs poorly on the test set---which has the same underlying patterns due
 to \({f}(.)\), but different observed deviations from \({f}(.)\) because of
-\(\epsilon\). Figure @ref(fig:jl-figure2) provides an illustration of this
-idea. In this example, the true relationship between \(X_{1}\) and \(Y\) is
-linear (see the graph in the middle); we know this for certain because these
-data were simulated.
+\(\epsilon\). Figure 11.2 provides an illustration of this idea. In this
+example, the true relationship between \(X_{1}\) and \(Y\) is linear (see the
+graph in the middle); we know this for certain because these data were
+simulated.
 
 \begin{figure}
-\hypertarget{fig:jl-figure2}{%
 \centering
 \includegraphics{images/ml/jl-figure2.png}
-\caption{Modeling True Relationship v. Overfitting}\label{fig:jl-figure2}
-}
+\caption{Modeling True Relationship v. Overfitting}
 \end{figure}
 
 Thus, it is a better idea to try and minimize test error. In order to generate
@@ -8235,8 +8211,12 @@ from the \({f}(.)\) due to \(\epsilon\) (per Equation 1). Machine learning
 practitioners often refer to this approach as \("\)focusing on the signal and
 ignoring the noise.\("\)
 
+\begin{shaded*}
+
 \textbf{Check-in Question 1:} What is overfitting and how can we reduce this
 problem?
+
+\end{shaded*}
 
 So how do we reduce the test error? The expected difference between
 \(\hat{f}(X_{1},X_{2})\) and \(Y\) is due to two types of error (e.g., see
@@ -8320,8 +8300,12 @@ squared bias and variance of \(\hat{f}(.)\), or the estimated model. Thus, to
 minimize the reducible error (and hence the total EPE), we want to minimize
 the bias and the variance.
 
+\begin{shaded*}
+
 \textbf{Check-in Question 2:} What is the expected prediction error (EPE), and
 why does it matter?
+
+\end{shaded*}
 
 \hypertarget{bias-variance-trade-offs}{%
 \subsection{Bias-Variance Trade-offs}\label{bias-variance-trade-offs}}
@@ -8351,23 +8335,25 @@ is also fitting to the observed deviations from \({f}(.)\) in the training set
 due to \(\epsilon\).
 
 \begin{figure}
-\hypertarget{fig:jl-figure3}{%
 \centering
 \includegraphics{images/ml/jl-figure3.png}
-\caption{Bias-Variance Trade-offs}\label{fig:jl-figure3}
-}
+\caption{Bias-Variance Trade-offs}
 \end{figure}
 
-Figure @ref(fig:jl-figure3) provides an illustration of this idea. The first
-model is not flexible enough, leading to high bias (also known as
-\textbf{underfitting}); on the other hand, the third model is too flexible,
-which leads to higher variance across slightly different training sets
-(\textbf{overfitting}). The second model imposes the ideal amount of
-flexibility, which optimizes the bias-variance trade-off and yields the
-smallest test MSE of the three alternatives.
+Figure 11.3 provides an illustration of this idea. The first model is not
+flexible enough, leading to high bias (also known as \textbf{underfitting});
+on the other hand, the third model is too flexible, which leads to higher
+variance across slightly different training sets (\textbf{overfitting}). The
+second model imposes the ideal amount of flexibility, which optimizes the
+bias-variance trade-off and yields the smallest test MSE of the three
+alternatives.
+
+\begin{shaded*}
 
 \textbf{Check-in Question 3:} Explain why reducing bias can often entail an
 increase in variance.
+
+\end{shaded*}
 
 \hypertarget{parametric-v.-non-parametric-methods}{%
 \subsection{Parametric v. Non-parametric
@@ -8484,20 +8470,22 @@ variables associated with the observations (Bryan 2004; Wagstaff and Cardie
 \("\)correct\("\) or \("\)true\("\) number of clusters is. Researchers can use
 clustering algorithms to identify more internally homogeneous groups of
 subjects (e.g., with respect to demographic characteristics, attitudes,
-preferences, consumption patterns). Figure @ref(fig:jl-figure4) provides an
-illustration of how we may organize machine learning methods by type and
-subtype. Please note that the list of examples is not meant to be exhaustive.
+preferences, consumption patterns). Figure 11.4 provides an illustration of
+how we may organize machine learning methods by type and subtype. Please note
+that the list of examples is not meant to be exhaustive.
 
 \begin{figure}
-\hypertarget{fig:jl-figure4}{%
 \centering
 \includegraphics{images/ml/jl-figure4.png}
-\caption{Types of Machine Learning Methods}\label{fig:jl-figure4}
-}
+\caption{Types of Machine Learning Methods}
 \end{figure}
+
+\begin{shaded*}
 
 \textbf{Check-in Question 4:} What is the main difference between supervised
 and unsupervised learning?
+
+\end{shaded*}
 
 \hypertarget{method-setupoverview-3}{%
 \section{Method: setup/overview}\label{method-setupoverview-3}}
@@ -8651,19 +8639,17 @@ training set, being white v. not being white was the strongest individual
 predictor of the Trump vote (i.e., it would maximize node purity). If this
 were the case, then the first split would be based on race: all white
 respondents would be assigned to the right branch, and all non-white
-respondents would be assigned to the left branch (see Figure
-@ref(fig:jl-figure5) below). Next, let us assume that among white respondents,
-being above the mean on the 1-7 point political conservatism scale is the
-strongest predictor of the Trump vote; if so, then the second split would be
-based on whether the white respondents' conservatism score is \(\leq 4.3\)
-(left branch) or \(> 4.3\) (right branch).
+respondents would be assigned to the left branch (see Figure 11.5) below).
+Next, let us assume that among white respondents, being above the mean on the
+1-7 point political conservatism scale is the strongest predictor of the Trump
+vote; if so, then the second split would be based on whether the white
+respondents' conservatism score is \(\leq 4.3\) (left branch) or \(> 4.3\)
+(right branch).
 
 \begin{figure}
-\hypertarget{fig:jl-figure5}{%
 \centering
 \includegraphics{images/ml/jl-figure5.png}
-\caption{Example of a Decision Tree}\label{fig:jl-figure5}
-}
+\caption{Example of a Decision Tree}
 \end{figure}
 
 In this simple example, the observations (or respondents) in the training set
