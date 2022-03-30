@@ -69,7 +69,7 @@
     <div class="title-card">
 
         <div class="title-card-body">
-
+   
             <hgroup>
                 <h1>$title$</h1>
                 $if(subtitle)$
@@ -77,11 +77,31 @@
                 $endif$
             </hgroup>
             <small><em>$for(author)$$author.name$$sep$, $endfor$</em></small>
+
         </div>
+
+        $if(book-cover)$
+        <div class="title-card-cover">
+            <img src="$book-cover$" alt="Cover of $title$">
+        </div>
+        $endif$       
 
     </div>
 
+    
+
     <main class="container">
+
+        $if(download)$
+            <details open>
+                <summary>Download</summary>
+                    $for(download)$
+                    <a href="$it.link$" role="button" class="secondary">
+                        $it.label$
+                    </a>
+                    $endfor$
+            </details>
+        $endif$
 
         <!-- not yet working :(
         <aside class="search">
@@ -97,14 +117,6 @@
                     <h2>Description</h3>
                     $description$
                 </aside>
-
-
-                $if(download)$
-                <details open>
-                    <summary>Download</summary>
-                    $for(download)$<a href="$it.link$" role="button" class="secondary">$it.label$</a>$endfor$
-                </details>
-                $endif$
             </header>
             $endif$
             

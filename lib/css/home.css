@@ -16,16 +16,6 @@
     margin: 1rem 0;
 }
 
-.title-card {
-    height: 90vh;
-    padding: 5rem;
-}
-
-.title-card-body {
-    position:absolute;
-    top: 50%;
-}
-
 /* headings */
 
 .sr-only {
@@ -64,4 +54,33 @@ details summary, details > dl > dt {
 
 details[open]>summary:not(:focus) {
     color: var(--primary);
+}
+
+/* book cover */
+
+.book-cover-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.title-card {
+    height: 90vh;
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 0px;
+}
+
+.title-card-body {
+    top: 50%;
+}
+
+.title-card-cover img {
+        width: 50%;
+        height: auto;
 }

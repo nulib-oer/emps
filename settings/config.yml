@@ -8,7 +8,7 @@ link-citations: true
 
 # website settings
 
-cover: true
+book-cover: "images/cover.png"
 
 download: # full-text download options
   - label: PDF
