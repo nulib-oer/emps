@@ -1,2 +1,2 @@
-# Source files for 'Empircal Methods in Political Science' by Jean Clipperton
+# Source files for 'Empirical Methods in Political Science' by Jean Clipperton
 
