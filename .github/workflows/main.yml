@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Pandoc
-        run: brew install pandoc
+        uses: docker://pandoc/core:2.9
 
       - name: Setup TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
