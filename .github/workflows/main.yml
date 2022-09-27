@@ -16,9 +16,6 @@ jobs:
       - name: Download Source Files
         uses: actions/checkout@v2
 
-      - name: Setup Pandoc
-        uses: docker://pandoc/core:2.9
-
       - name: Setup TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
 
@@ -28,6 +25,7 @@ jobs:
           tlmgr install $(cat lib/latex-packages.txt)
 
       - name: Build Website
+        uses: docker://pandoc/core:2.9
         run: |
           bash lantern.sh
 
