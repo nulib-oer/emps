@@ -16,8 +16,8 @@ jobs:
       - name: Download Source Files
         uses: actions/checkout@v2
       
-      - name: setup pandoc
-        run: sudo apt-get install pandoc
+      - name: Setup Pandoc
+        run: brew install pandoc
 
       - name: Setup TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
